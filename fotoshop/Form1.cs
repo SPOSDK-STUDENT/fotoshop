@@ -16,11 +16,9 @@ namespace fotoshop
     public partial class Form1 : Form
     {
         private BitovaMapa btm;
-        private BitovaMapa oldBtm;
         public Form1()
         {
             btm = new BitovaMapa();
-            oldBtm = new BitovaMapa();
             InitializeComponent();
         }
         private void soubor_zobrazitfoto_Click(object sender, EventArgs e)
@@ -39,87 +37,93 @@ namespace fotoshop
                 btm.bitmap = Import.bitmap;
             }
         }
-        private void zobrazit4ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void soubor_zobrazit_4_Click(object sender, EventArgs e)
         {
             btm.drawFour();
         }
         private void upravy_cernobili_cernobila_Click(object sender, EventArgs e)
         {
             this.Text = "Fotošop - načítání filtru";
-            oldBtm.bitmap = btm.bitmap;
-            Bitmap Bmp = btm.bitmap;
+            btm.bitmap = upravy_cernobili_cernobila_color(btm);
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
+        }
+        private void bb()
+        {
+
+        }
+        private Bitmap upravy_cernobili_cernobila_color(BitovaMapa btm)
+        {
+            Bitmap editedBmp = btm.bitmap;
             Color c;
             int rgb;
-            for (int y = 0; y < Bmp.Height; y++)
+            for (int y = 0; y < editedBmp.Height; y++)
             {
-                for (int x = 0; x < Bmp.Width; x++)
+                for (int x = 0; x < editedBmp.Width; x++)
                 {
-                    c = Bmp.GetPixel(x, y);
+                    c = editedBmp.GetPixel(x, y);
                     rgb = (int)Math.Round(.299 * c.R + .587 * c.G + .114 * c.B);
-                    Bmp.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
+                    editedBmp.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
                 }
             }
-            oldBtm.drawBitmap(new Point(200, 200), this);
-            btm.bitmap = Bmp;
-            //btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            return editedBmp;
         }
         private void upravy_cernobili_bilacerna_Click(object sender, EventArgs e)
         {
             this.Text = "Fotošop - načítání filtru";
-            oldBtm.bitmap = btm.bitmap;
-            Bitmap Bmp = btm.bitmap;
-            for (int y = 0; y < Bmp.Height; y++)
-                for (int x = 0; x < Bmp.Width; x++)
+            Bitmap editedBmp = btm.bitmap;
+            for (int y = 0; y < editedBmp.Height; y++)
+                for (int x = 0; x < editedBmp.Width; x++)
                 {
-                    if (btm.svetelnost(Bmp.GetPixel(x, y)) > 160)
+                    if (btm.svetelnost(editedBmp.GetPixel(x, y)) > 160)
                     {
-                        Bmp.SetPixel(x, y, Color.White);
+                        editedBmp.SetPixel(x, y, Color.White);
                     }
                     else
                     {
-                        Bmp.SetPixel(x, y, Color.Black);
+                        editedBmp.SetPixel(x, y, Color.Black);
                     }
                 }
-            btm.bitmap = Bmp;
+            btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0, 0), this);
             this.Text = "Fotošop";
         }
         private void upravy_cernobili_petodstinu_Click(object sender, EventArgs e)
         {
             this.Text = "Fotošop - načítání filtru";
-            oldBtm.bitmap = btm.bitmap;
-            Bitmap Bmp = btm.bitmap;
-            for (int y = 0; y < Bmp.Height; y++)
-                for (int x = 0; x < Bmp.Width; x++)
+            Bitmap editedBmp = btm.bitmap;
+            for (int y = 0; y < editedBmp.Height; y++)
+                for (int x = 0; x < editedBmp.Width; x++)
                 {
-                    if (btm.svetelnost(Bmp.GetPixel(x, y)) < 51)
+                    if (btm.svetelnost(editedBmp.GetPixel(x, y)) < 51)
                     {
-                        Bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0, 0));
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, 0, 0, 0));
                     }
-                    else if (btm.svetelnost(Bmp.GetPixel(x, y)) < 102)
+                    else if (btm.svetelnost(editedBmp.GetPixel(x, y)) < 102)
                     {
-                        Bmp.SetPixel(x, y, Color.FromArgb(255, 51, 51, 51));
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, 51, 51, 51));
                     }
-                    else if (btm.svetelnost(Bmp.GetPixel(x, y)) < 153)
+                    else if (btm.svetelnost(editedBmp.GetPixel(x, y)) < 153)
                     {
-                        Bmp.SetPixel(x, y, Color.FromArgb(255, 102, 102, 102));
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, 102, 102, 102));
                     }
-                    else if (btm.svetelnost(Bmp.GetPixel(x, y)) < 204)
+                    else if (btm.svetelnost(editedBmp.GetPixel(x, y)) < 204)
                     {
-                        Bmp.SetPixel(x, y, Color.FromArgb(255, 153, 153, 153));
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, 153, 153, 153));
                     }
                 }
-            btm.bitmap = Bmp;
+            btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0,0), this);
             this.Text = "Fotošop";
         }
         private void soubor_zpet_Click(object sender, EventArgs e)
         {
             this.Text = "Fotošop - navrácení úpravy";
-            btm.bitmap = oldBtm.bitmap;
+            //btm.bitmap = oldBtm.bitmap;
             btm.drawBitmap(new Point(0, 0), this);
             this.Text = "Fotošop";
         }
+
+        
     }
 }
