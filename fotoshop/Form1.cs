@@ -10,18 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using System.IO.Ports;
 
 namespace fotoshop
 {
     public partial class Form1 : Form
     {
         private BitovaMapa btm;
+        List <BitovaMapa> oldBtms = new List<BitovaMapa>();
+        private int positionInOld = 0;
         public Form1()
         {
             btm = new BitovaMapa();
             InitializeComponent();
         }
-        private void soubor_zobrazitfoto_Click(object sender, EventArgs e)
+        private void soubor_zobrazit_foto_Click(object sender, EventArgs e)
         {
             btm.drawBitmap(new Point(0, 0), this);
         }
@@ -43,17 +46,8 @@ namespace fotoshop
         }
         private void upravy_cernobili_cernobila_Click(object sender, EventArgs e)
         {
+            oldBtms.Insert(positionInOld, btm.copy());//vysvětlim naživo xd moc komplikovaný
             this.Text = "Fotošop - načítání filtru";
-            btm.bitmap = upravy_cernobili_cernobila_color(btm);
-            btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
-        }
-        private void bb()
-        {
-
-        }
-        private Bitmap upravy_cernobili_cernobila_color(BitovaMapa btm)
-        {
             Bitmap editedBmp = btm.bitmap;
             Color c;
             int rgb;
@@ -66,10 +60,13 @@ namespace fotoshop
                     editedBmp.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
                 }
             }
-            return editedBmp;
+            btm.bitmap = editedBmp;
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
         }
         private void upravy_cernobili_bilacerna_Click(object sender, EventArgs e)
         {
+            oldBtms.Insert(positionInOld, btm.copy());
             this.Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             for (int y = 0; y < editedBmp.Height; y++)
@@ -90,6 +87,7 @@ namespace fotoshop
         }
         private void upravy_cernobili_petodstinu_Click(object sender, EventArgs e)
         {
+            oldBtms.Insert(positionInOld, btm.copy());
             this.Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             for (int y = 0; y < editedBmp.Height; y++)
@@ -111,6 +109,10 @@ namespace fotoshop
                     {
                         editedBmp.SetPixel(x, y, Color.FromArgb(255, 153, 153, 153));
                     }
+                    else
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, 204, 204, 204));
+                    }
                 }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0,0), this);
@@ -119,11 +121,10 @@ namespace fotoshop
         private void soubor_zpet_Click(object sender, EventArgs e)
         {
             this.Text = "Fotošop - navrácení úpravy";
-            //btm.bitmap = oldBtm.bitmap;
+            btm = oldBtms[positionInOld];
+            positionInOld++;
             btm.drawBitmap(new Point(0, 0), this);
             this.Text = "Fotošop";
         }
-
-        
     }
 }

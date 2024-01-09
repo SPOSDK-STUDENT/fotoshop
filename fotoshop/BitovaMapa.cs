@@ -26,6 +26,11 @@ namespace fotoshop
             this.CestaKBitmape = bitmapPath;
             this.bitmap = new Bitmap(this.CestaKBitmape);
         }
+        public BitovaMapa(Bitmap bitmap)
+        {
+            this.CestaKBitmape = "nieje :D";
+            this.bitmap = new Bitmap(bitmap);
+        }
 
         //vy to máte pojmenované NacistBitovouMapu
         public void drawBitmap(Point pos, Form1 form)
@@ -47,6 +52,13 @@ namespace fotoshop
         public int svetelnost(Color pixel)
         {
             return Convert.ToInt32(svetlostR * pixel.R + svetlostG * pixel.G + svetlostB * pixel.B);
+        }
+
+        //https://stackoverflow.com/questions/35395500/when-i-change-the-value-of-a-variable-which-is-a-copy-of-another-it-changes-the
+        public BitovaMapa copy()
+        {
+            BitovaMapa tC = new BitovaMapa(this.bitmap);
+            return tC;
         }
     }
 }

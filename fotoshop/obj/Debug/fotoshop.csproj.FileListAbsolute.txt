@@ -42,3 +42,13 @@ C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.csproj.Ge
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.exe
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.pdb
+D:\programko\h\fotosop\fotoshop\bin\Debug\fotoshop.exe.config
+D:\programko\h\fotosop\fotoshop\bin\Debug\fotoshop.exe
+D:\programko\h\fotosop\fotoshop\bin\Debug\fotoshop.pdb
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.csproj.AssemblyReference.cache
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.Form1.resources
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.Properties.Resources.resources
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.csproj.GenerateResource.cache
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.exe
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.pdb
