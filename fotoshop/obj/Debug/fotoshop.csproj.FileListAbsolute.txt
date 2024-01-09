@@ -1,0 +1,33 @@
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\bin\Debug\fotoshop.exe.config
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\bin\Debug\fotoshop.exe
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\bin\Debug\fotoshop.pdb
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.AssemblyReference.cache
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.SuggestedBindingRedirects.cache
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.Form1.resources
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.Properties.Resources.resources
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.GenerateResource.cache
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.exe
+C:\Users\kovarikr\source\repos\fotoshop\fotoshop\obj\Debug\fotoshop.pdb
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\bin\Debug\fotoshop.exe.config
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\bin\Debug\fotoshop.exe
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\bin\Debug\fotoshop.pdb
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.AssemblyReference.cache
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.SuggestedBindingRedirects.cache
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.Form1.resources
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.Properties.Resources.resources
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.GenerateResource.cache
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.exe
+C:\Users\rohacekd\Downloads\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.pdb
+E:\fotoshop 5\fotoshop\fotoshop\bin\Debug\fotoshop.exe.config
+E:\fotoshop 5\fotoshop\fotoshop\bin\Debug\fotoshop.exe
+E:\fotoshop 5\fotoshop\fotoshop\bin\Debug\fotoshop.pdb
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.AssemblyReference.cache
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.SuggestedBindingRedirects.cache
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.Form1.resources
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.Properties.Resources.resources
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.GenerateResource.cache
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.exe
+E:\fotoshop 5\fotoshop\fotoshop\obj\Debug\fotoshop.pdb
