@@ -126,5 +126,95 @@ namespace fotoshop
             btm.drawBitmap(new Point(0, 0), this);
             this.Text = "Fotošop";
         }
+        private void upravy_odstinybarvy_5odstinu1barvy_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+
+            if (cd.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
+
+            oldBtms.Insert(positionInOld, btm.copy());
+            this.Text = "Fotošop - načítání filtru";
+            Bitmap editedBmp = btm.bitmap;
+            for (int y = 0; y < editedBmp.Height; y++)
+                for (int x = 0; x < editedBmp.Width; x++)
+                {
+                    Color pixel = editedBmp.GetPixel(x, y);
+                    Color clr = cd.Color;
+                    if (btm.svetelnost(pixel) < 51)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(clr.R * 0.4), Convert.ToInt32(clr.G * 0.4), Convert.ToInt32(clr.B * 0.4)));
+                    }
+                    else if (btm.svetelnost(pixel) < 102)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(clr.R * 0.5), Convert.ToInt32(clr.G * 0.5), Convert.ToInt32(clr.B * 0.5)));
+                    }
+                    else if (btm.svetelnost(pixel) < 153)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(clr.R * 0.7), Convert.ToInt32(clr.G * 0.7), Convert.ToInt32(clr.B * 0.7)));
+                    }
+                    else if (btm.svetelnost(pixel) < 204)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(clr.R * 0.9), Convert.ToInt32(clr.G * 0.9), Convert.ToInt32(clr.B * 0.9)));
+                    }
+                    else
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, clr.R, clr.G, clr.B));
+                    }
+                }
+            btm.bitmap = editedBmp;
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
+        }
+
+        private void upravy_odstinybarvy_5barev_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd1 = new ColorDialog();
+            if (cd1.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
+
+            ColorDialog cd2 = new ColorDialog();
+            if (cd2.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
+
+            ColorDialog cd3 = new ColorDialog();
+            if (cd3.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
+
+            ColorDialog cd4 = new ColorDialog();
+            if (cd4.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
+
+            ColorDialog cd5 = new ColorDialog();
+            if (cd5.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
+
+            oldBtms.Insert(positionInOld, btm.copy());
+            this.Text = "Fotošop - načítání filtru";
+            Bitmap editedBmp = btm.bitmap;
+            for (int y = 0; y < editedBmp.Height; y++)
+                for (int x = 0; x < editedBmp.Width; x++)
+                {
+                    Color pixel = editedBmp.GetPixel(x, y);
+                    Color clr = cd1.Color;
+                    if (btm.svetelnost(pixel) < 51)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(cd1.Color.R * 0.4), Convert.ToInt32(cd1.Color.G * 0.4), Convert.ToInt32(cd1.Color.B * 0.4)));
+                    }
+                    else if (btm.svetelnost(pixel) < 102)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(cd2.Color.R * 0.5), Convert.ToInt32(cd2.Color.G * 0.5), Convert.ToInt32(cd2.Color.B * 0.5)));
+                    }
+                    else if (btm.svetelnost(pixel) < 153)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(cd3.Color.R * 0.7), Convert.ToInt32(cd3.Color.G * 0.7), Convert.ToInt32(cd3.Color.B * 0.7)));
+                    }
+                    else if (btm.svetelnost(pixel) < 204)
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, Convert.ToInt32(cd4.Color.R * 0.9), Convert.ToInt32(cd4.Color.G * 0.9), Convert.ToInt32(cd4.Color.B * 0.9)));
+                    }
+                    else
+                    {
+                        editedBmp.SetPixel(x, y, Color.FromArgb(255, cd5.Color.R, cd5.Color.G, cd5.Color.B));
+                    }
+                }
+            btm.bitmap = editedBmp;
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
+        }
     }
 }
