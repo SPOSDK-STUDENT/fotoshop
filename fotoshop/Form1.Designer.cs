@@ -266,6 +266,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Fotošop";
+            this.Move += new System.EventHandler(this.form_redraw);
+            this.Resize += new System.EventHandler(this.form_redraw);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

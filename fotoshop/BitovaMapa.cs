@@ -12,31 +12,35 @@ namespace fotoshop
     {
         public string CestaKBitmape { get; set; }
         public Bitmap bitmap { get; set; }
+        public Size size { get; set; }
         private const double svetlostR = 0.3;
         private const double svetlostG = 0.6;
         private const double svetlostB = 0.1;
 
         public BitovaMapa()
         {
-            this.CestaKBitmape = Environment.CurrentDirectory + @"\neco.jpg";
+            this.CestaKBitmape = Environment.CurrentDirectory + @"\hasagi.jpg";
             this.bitmap = new Bitmap(this.CestaKBitmape);
+            this.size = bitmap.Size;
         }
         public BitovaMapa(string bitmapPath)
         {
             this.CestaKBitmape = bitmapPath;
             this.bitmap = new Bitmap(this.CestaKBitmape);
+            this.size = bitmap.Size;
         }
-        public BitovaMapa(Bitmap bitmap)
+        public BitovaMapa(Bitmap bitmap, Size size)
         {
             this.CestaKBitmape = "nieje :D";
             this.bitmap = new Bitmap(bitmap);
+            this.size = size;
         }
 
         //vy to máte pojmenované NacistBitovouMapu
         public void drawBitmap(Point pos, Form1 form)
         {
             Graphics grf = form.CreateGraphics();
-            grf.DrawImage(this.bitmap, pos.X,pos.Y, this.bitmap.Width, this.bitmap.Height);
+            grf.DrawImage(this.bitmap, pos.X,pos.Y, this.size.Width, this.size.Height);
             grf.Dispose();
         }
         public void drawFour()
@@ -57,7 +61,7 @@ namespace fotoshop
         //https://stackoverflow.com/questions/35395500/when-i-change-the-value-of-a-variable-which-is-a-copy-of-another-it-changes-the
         public BitovaMapa copy()
         {
-            BitovaMapa tC = new BitovaMapa(this.bitmap);
+            BitovaMapa tC = new BitovaMapa(this.bitmap, this.size);
             return tC;
         }
     }
