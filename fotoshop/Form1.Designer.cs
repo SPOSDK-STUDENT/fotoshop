@@ -36,25 +36,27 @@
             this.zobrazitFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zobrazotFotoOVelikostiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zobrazit4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.přehrávatFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vykreslitKružniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.komprimaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otevřítToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uložitJakoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.upravyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.výběrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pokusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.přehrávatFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +76,8 @@
             this.paletaToolStripMenuItem,
             this.hraToolStripMenuItem,
             this.pokusToolStripMenuItem,
-            this.colorMapToolStripMenuItem});
+            this.colorMapToolStripMenuItem,
+            this.toolStripMenuItem5});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -86,12 +89,10 @@
             // 
             this.souborToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem6,
-            this.přehrávatFotoToolStripMenuItem,
             this.vykreslitKružniciToolStripMenuItem,
             this.komprimaceToolStripMenuItem,
             this.otevřítToolStripMenuItem,
-            this.uložitJakoToolStripMenuItem,
-            this.toolStripMenuItem5});
+            this.uložitJakoToolStripMenuItem});
             this.souborToolStripMenuItem.Name = "souborToolStripMenuItem";
             this.souborToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.souborToolStripMenuItem.Text = "Soubor";
@@ -101,9 +102,10 @@
             this.toolStripMenuItem6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zobrazitFotoToolStripMenuItem,
             this.zobrazotFotoOVelikostiToolStripMenuItem,
-            this.zobrazit4ToolStripMenuItem});
+            this.zobrazit4ToolStripMenuItem,
+            this.přehrávatFotoToolStripMenuItem});
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(163, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem6.Text = "Zobrazit";
             // 
             // zobrazitFotoToolStripMenuItem
@@ -125,12 +127,6 @@
             this.zobrazit4ToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.zobrazit4ToolStripMenuItem.Text = "Zobrazit 4";
             this.zobrazit4ToolStripMenuItem.Click += new System.EventHandler(this.soubor_zobrazit_4_Click);
-            // 
-            // přehrávatFotoToolStripMenuItem
-            // 
-            this.přehrávatFotoToolStripMenuItem.Name = "přehrávatFotoToolStripMenuItem";
-            this.přehrávatFotoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.přehrávatFotoToolStripMenuItem.Text = "Přehrávat foto";
             // 
             // vykreslitKružniciToolStripMenuItem
             // 
@@ -157,18 +153,12 @@
             this.uložitJakoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.uložitJakoToolStripMenuItem.Text = "Uložit Jako";
             // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(163, 22);
-            this.toolStripMenuItem5.Text = "Zpět";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.soubor_zpet_Click);
-            // 
             // upravyToolStripMenuItem
             // 
             this.upravyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.toolStripMenuItem8});
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem10});
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
             this.upravyToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.upravyToolStripMenuItem.Text = "Upravy";
@@ -180,7 +170,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem4});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.toolStripMenuItem1.Text = "Černobílí";
             // 
             // toolStripMenuItem2
@@ -203,6 +193,29 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItem4.Text = "5 Odstínů šedi";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.upravy_cernobili_petodstinu_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem9});
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(147, 22);
+            this.toolStripMenuItem8.Text = "Odstíny Barvy";
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem7.Text = "Odstíny 5 barev";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.upravy_odstinybarvy_5barev_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem9.Text = "5 odstínů barvy";
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.upravy_odstinybarvy_5odstinu1barvy_Click);
             // 
             // výběrToolStripMenuItem
             // 
@@ -234,28 +247,33 @@
             this.colorMapToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.colorMapToolStripMenuItem.Text = "ColorMap";
             // 
-            // toolStripMenuItem8
+            // přehrávatFotoToolStripMenuItem
             // 
-            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem7,
-            this.toolStripMenuItem9});
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem8.Text = "Odstíny Barvy";
+            this.přehrávatFotoToolStripMenuItem.Name = "přehrávatFotoToolStripMenuItem";
+            this.přehrávatFotoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.přehrávatFotoToolStripMenuItem.Text = "Přehrávat foto";
             // 
-            // toolStripMenuItem7
+            // toolStripMenuItem5
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem7.Text = "Odstíny 5 barev";
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.upravy_odstinybarvy_5barev_Click);
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(43, 20);
+            this.toolStripMenuItem5.Text = "Zpět";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.zpet_Click);
             // 
-            // toolStripMenuItem9
+            // toolStripMenuItem10
             // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem9.Text = "5 odstínů barvy";
-            this.toolStripMenuItem9.Click += new System.EventHandler(this.upravy_odstinybarvy_5odstinu1barvy_Click);
+            this.toolStripMenuItem10.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem11});
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem10.Text = "Reliéf";
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem11.Text = "Zhora zleva";
+            this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
             // Form1
             // 
@@ -263,11 +281,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Fotošop";
-            this.Move += new System.EventHandler(this.form_redraw);
-            this.Resize += new System.EventHandler(this.form_redraw);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -280,7 +298,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem souborToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem přehrávatFotoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vykreslitKružniciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem komprimaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otevřítToolStripMenuItem;
@@ -295,7 +312,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem zobrazitFotoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zobrazotFotoOVelikostiToolStripMenuItem;
@@ -303,6 +319,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem přehrávatFotoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
     }
 }
 

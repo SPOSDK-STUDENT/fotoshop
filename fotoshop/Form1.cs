@@ -118,7 +118,7 @@ namespace fotoshop
             btm.drawBitmap(new Point(0,0), this);
             this.Text = "Fotošop";
         }
-        private void soubor_zpet_Click(object sender, EventArgs e)
+        private void zpet_Click(object sender, EventArgs e)
         {
             if (oldBtms.Count == 0) { return; }
             this.Text = "Fotošop - navrácení úpravy";
@@ -218,10 +218,44 @@ namespace fotoshop
             btm.drawBitmap(new Point(0, 0), this);
             this.Text = "Fotošop";
         }
-        private void form_redraw(object sender, EventArgs e)
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            btm.size = this.Size;
             btm.drawBitmap(new Point(0, 0), this);
+        }
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            oldBtms.Insert(positionInOld, btm.copy());
+            this.Text = "Fotošop - načítání filtru";
+            Bitmap editedBmp = btm.bitmap;
+
+            for (int y = 0; y < editedBmp.Height; y++) {
+                for (int x = 0; x < editedBmp.Width; x++)
+                {
+                    try {
+                        Color pixel = editedBmp.GetPixel(x, y);
+                        Color pixelDal = editedBmp.GetPixel(x + 1, y + 1);
+                        int svetloDal = btm.svetelnost(pixelDal);
+                        int svetlo = btm.svetelnost(pixel);
+                        int rozdil = svetlo - svetloDal;
+                        if (svetlo > svetloDal)
+                        {
+                            editedBmp.SetPixel(x, y, Color.FromArgb(255, 100-rozdil - 20, 100-rozdil - 20, 100-rozdil-20));
+                        }else if (svetlo<svetloDal)
+                        {
+                            editedBmp.SetPixel(x, y, Color.FromArgb(255, 200 + rozdil+20, 200 + rozdil + 20, 200 + rozdil + 20));
+                        }else
+                        {
+                            editedBmp.SetPixel(x, y, Color.FromArgb(255, 127, 127, 127));
+                        }
+                    }
+                    catch { }
+                }
+            }
+            btm.bitmap = editedBmp;
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
         }
     }
 }
