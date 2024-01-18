@@ -52,3 +52,14 @@ D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.csproj.GenerateResource.cache
 D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
 D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.exe
 D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.pdb
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\bin\Debug\fotoshop.exe.config
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\bin\Debug\fotoshop.exe
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\bin\Debug\fotoshop.pdb
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.AssemblyReference.cache
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.SuggestedBindingRedirects.cache
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.Form1.resources
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.Properties.Resources.resources
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.GenerateResource.cache
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.exe
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.pdb
