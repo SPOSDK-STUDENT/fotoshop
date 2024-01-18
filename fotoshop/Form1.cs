@@ -17,10 +17,12 @@ namespace fotoshop
     public partial class Form1 : Form
     {
         private BitovaMapa btm;
+        private BitovaMapa debugBtm;
         List <BitovaMapa> oldBtms = new List<BitovaMapa>();
         private int positionInOld = 0;
         public Form1()
         {
+            btm = new BitovaMapa();
             btm = new BitovaMapa();
             InitializeComponent();
             btm.drawBitmap(new Point(0, 0), this);
@@ -45,6 +47,8 @@ namespace fotoshop
         {
             btm.drawFour();
         }
+
+        #region Úpravy
         private void upravy_cernobili_cernobila_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());//vysvětlim naživo xd moc komplikovaný
@@ -62,6 +66,7 @@ namespace fotoshop
                 }
             }
             btm.bitmap = editedBmp;
+            oldBtms.Insert(positionInOld + 1, btm.copy());
             btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
         }
@@ -210,12 +215,12 @@ namespace fotoshop
             btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
         }
-
+        #endregion
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        //nefunkční reliéf
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());
@@ -246,6 +251,7 @@ namespace fotoshop
                 }
             }
             btm.bitmap = editedBmp;
+            oldBtms.Insert(positionInOld+1, btm.copy());
             btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
         }
@@ -253,19 +259,26 @@ namespace fotoshop
         {
             if (oldBtms.Count == 0) { return; }
             Text = "Fotošop - navrácení úpravy";
-            oldBtms.Insert(positionInOld, btm.copy());
-            btm = oldBtms[positionInOld+1];
             positionInOld++;
+            btm = oldBtms[positionInOld];
             btm.drawBitmap(new Point(0, 0), this);
+            label1.Text = positionInOld.ToString();
+            debugBtm = oldBtms[positionInOld - 1];
+            label2.Text = (positionInOld-1).ToString();
+            debugBtm.drawBitmap(new Point(400, 0), this);
             Text = "Fotošop";
         }
         private void redo_Click(object sender, EventArgs e)
         {
             if (oldBtms.Count == 0) { return; }
             Text = "Fotošop - navrácení úpravy";
-            btm = oldBtms[positionInOld];
             positionInOld--;
+            btm = oldBtms[positionInOld];
             btm.drawBitmap(new Point(0, 0), this);
+            label1.Text = positionInOld.ToString();
+            //debugBtm = oldBtms[positionInOld + 1];
+            //label2.Text = (positionInOld+1).ToString();
+            debugBtm.drawBitmap(new Point(400, 0), this);
             Text = "Fotošop";
         }
     }
