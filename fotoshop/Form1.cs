@@ -11,18 +11,18 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO.Ports;
+using System.Threading;
+using System.Drawing.Imaging;
 
 namespace fotoshop
 {
     public partial class Form1 : Form
     {
         private BitovaMapa btm;
-        private BitovaMapa debugBtm;
         List <BitovaMapa> oldBtms = new List<BitovaMapa>();
         private int positionInOld = 0;
         public Form1()
         {
-            btm = new BitovaMapa();
             btm = new BitovaMapa();
             InitializeComponent();
             btm.drawBitmap(new Point(0, 0), this);
@@ -220,37 +220,46 @@ namespace fotoshop
         {
 
         }
-        //nefunkční reliéf
+        //reliéf
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());
             Text = "Fotošop - načítání filtru";
-            Bitmap editedBmp = btm.bitmap;
-
-            for (int y = 0; y < editedBmp.Height; y++) {
-                for (int x = 0; x < editedBmp.Width; x++)
+            Bitmap bit1 = new Bitmap(btm.copy().bitmap);
+            Bitmap bit2 = new Bitmap(btm.copy().bitmap);
+            Color pixel1;
+            Color pixel2;
+            int svetlost1;
+            int svetlost2;
+            int svetlost;
+            for (int i = 0; i < bit1.Width; i++)
+            {
+                for (int j = 0; j < bit1.Height; j++)
                 {
-                    try {
-                        Color pixel = editedBmp.GetPixel(x, y);
-                        Color pixelDal = editedBmp.GetPixel(x + 1, y + 1);
-                        int svetloDal = btm.svetelnost(pixelDal);
-                        int svetlo = btm.svetelnost(pixel);
-                        int rozdil = svetlo - svetloDal;
-                        if (svetlo > svetloDal)
-                        {
-                            editedBmp.SetPixel(x, y, Color.FromArgb(255, 100-rozdil - 20, 100-rozdil - 20, 100-rozdil-20));
-                        }else if (svetlo<svetloDal)
-                        {
-                            editedBmp.SetPixel(x, y, Color.FromArgb(255, 200 + rozdil+20, 200 + rozdil + 20, 200 + rozdil + 20));
-                        }else
-                        {
-                            editedBmp.SetPixel(x, y, Color.FromArgb(255, 127, 127, 127));
-                        }
+                    pixel1 = bit1.GetPixel(i, j);
+                    svetlost1 = btm.svetelnost(pixel1);
+                    if ((i > 4) & (j > 2))
+                    {
+                        pixel2 = bit2.GetPixel(i - 4, j - 2);
                     }
-                    catch { }
+                    else
+                    {
+                        pixel2 = bit1.GetPixel(i, j);
+                    }
+                    svetlost2 = btm.svetelnost(pixel2);
+                    svetlost = (150 + svetlost2 - svetlost1);
+                    if (svetlost < 0)
+                    {
+                        svetlost = 0;
+                    }
+                    if (svetlost > 255)
+                    {
+                        svetlost = 255;
+                    }
+                    bit2.SetPixel(i, j, Color.FromArgb(svetlost, svetlost, svetlost));
                 }
             }
-            btm.bitmap = editedBmp;
+            btm.bitmap = bit2;
             oldBtms.Insert(positionInOld+1, btm.copy());
             btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
@@ -262,10 +271,6 @@ namespace fotoshop
             positionInOld++;
             btm = oldBtms[positionInOld];
             btm.drawBitmap(new Point(0, 0), this);
-            label1.Text = positionInOld.ToString();
-            debugBtm = oldBtms[positionInOld - 1];
-            label2.Text = (positionInOld-1).ToString();
-            debugBtm.drawBitmap(new Point(400, 0), this);
             Text = "Fotošop";
         }
         private void redo_Click(object sender, EventArgs e)
@@ -275,11 +280,88 @@ namespace fotoshop
             positionInOld--;
             btm = oldBtms[positionInOld];
             btm.drawBitmap(new Point(0, 0), this);
-            label1.Text = positionInOld.ToString();
-            //debugBtm = oldBtms[positionInOld + 1];
-            //label2.Text = (positionInOld+1).ToString();
-            debugBtm.drawBitmap(new Point(400, 0), this);
             Text = "Fotošop";
+        }
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            btm.drawBitmap(new Point(0, 0), this);
+        }
+
+        Form form2 = new Form();
+        BitovaMapa Import = new BitovaMapa();
+        BitovaMapa Import2 = new BitovaMapa();
+        private void soubor_zobrazit_2overlay_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Otevřít";
+            ofd.Filter = "jpg obrázky (*.jpg)|*.jpg|Jpeg obrázky (*jpeg)|*.jpeg|png obrázky (*.png)|*.png";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                Import = new BitovaMapa(ofd.FileName);
+                //btm.bitmap = Import.bitmap;
+
+                OpenFileDialog ofd2 = new OpenFileDialog();
+                ofd2.Title = "Otevřít";
+                ofd2.Filter = "jpg obrázky (*.jpg)|*.jpg|Jpeg obrázky (*jpeg)|*.jpeg|png obrázky (*.png)|*.png";
+                if (ofd2.ShowDialog() == DialogResult.OK)
+                {
+                    Import2 = new BitovaMapa(ofd2.FileName);
+                    form2 = new Form();
+                    form2.Show();
+                    Import.bitmap = SetImageOpacity(Import.bitmap, 0.5F);
+                    Import2.bitmap = SetImageOpacity(Import2.bitmap, 0.5F);
+                    Import.drawBitmap(new Point(0, 0), form2, true);
+                    Import2.drawBitmap(new Point(0, 0), form2, true);
+                    form2.SizeChanged += new System.EventHandler(Form2_SizeChanged);
+                }
+            }
+        }
+        private void Form2_SizeChanged(object sender, EventArgs e)
+        {
+            Import.drawBitmap(new Point(0, 0), form2, true);
+            Import2.drawBitmap(new Point(0, 0), form2, true);
+        }
+        //nefunguje a není potřeba
+        private void upravy_transparence_Click(object sender, EventArgs e)
+        {
+            Text = "Fotošop - načítání filtru";
+            oldBtms.Insert(positionInOld, btm.copy());
+            btm.bitmap.MakeTransparent();
+            oldBtms.Insert(positionInOld + 1, btm.copy());
+            Text = "Fotošop";
+        }
+        public Bitmap SetImageOpacity(Bitmap image, float opacity)
+        {
+            try
+            {
+                //create a Bitmap the size of the image provided  
+                Bitmap bmp = new Bitmap(image.Width, image.Height);
+
+                //create a graphics object from the image  
+                using (Graphics gfx = Graphics.FromImage(bmp))
+                {
+                    //create a color matrix object  
+                    ColorMatrix matrix = new ColorMatrix();
+
+                    //set the opacity  
+                    matrix.Matrix33 = opacity;
+
+                    //create image attributes  
+                    ImageAttributes attributes = new ImageAttributes();
+
+                    //set the color(opacity) of the image  
+                    attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                    //now draw the image  
+                    gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
+                }
+                return bmp;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
     }
 }

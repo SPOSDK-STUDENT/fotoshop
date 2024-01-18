@@ -38,10 +38,24 @@ namespace fotoshop
         }
 
         //vy to máte pojmenované NacistBitovouMapu
-        public void drawBitmap(Point pos, Form1 form)
+        public void drawBitmap(Point pos, Form form)
         {
             Graphics grf = form.CreateGraphics();
-            grf.DrawImage(this.bitmap, pos.X,pos.Y, this.size.Width, this.size.Height);
+            grf.Clear(Color.White);
+            grf.DrawImage(this.bitmap, pos.X,pos.Y, this.bitmap.Width, this.bitmap.Height);
+            grf.Dispose();
+        }
+        public void drawBitmap(Point pos, Form form, Size size)
+        {
+            Graphics grf = form.CreateGraphics();
+            grf.Clear(Color.White);
+            grf.DrawImage(this.bitmap, pos.X, pos.Y, size.Width, size.Height);
+            grf.Dispose();
+        }
+        public void drawBitmap(Point pos, Form form, bool noClear)
+        {
+            Graphics grf = form.CreateGraphics();
+            grf.DrawImage(this.bitmap, pos.X, pos.Y, size.Width, size.Height);
             grf.Dispose();
         }
         public void drawFour()
