@@ -23,6 +23,7 @@ namespace fotoshop
         {
             btm = new BitovaMapa();
             InitializeComponent();
+            btm.drawBitmap(new Point(0, 0), this);
         }
         private void soubor_zobrazit_foto_Click(object sender, EventArgs e)
         {
@@ -47,7 +48,7 @@ namespace fotoshop
         private void upravy_cernobili_cernobila_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());//vysvětlim naživo xd moc komplikovaný
-            this.Text = "Fotošop - načítání filtru";
+            Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             Color c;
             int rgb;
@@ -62,12 +63,12 @@ namespace fotoshop
             }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            Text = "Fotošop";
         }
         private void upravy_cernobili_bilacerna_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());
-            this.Text = "Fotošop - načítání filtru";
+            Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             for (int y = 0; y < editedBmp.Height; y++)
                 for (int x = 0; x < editedBmp.Width; x++)
@@ -83,12 +84,12 @@ namespace fotoshop
                 }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            Text = "Fotošop";
         }
         private void upravy_cernobili_petodstinu_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());
-            this.Text = "Fotošop - načítání filtru";
+            Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             for (int y = 0; y < editedBmp.Height; y++)
                 for (int x = 0; x < editedBmp.Width; x++)
@@ -116,16 +117,7 @@ namespace fotoshop
                 }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0,0), this);
-            this.Text = "Fotošop";
-        }
-        private void zpet_Click(object sender, EventArgs e)
-        {
-            if (oldBtms.Count == 0) { return; }
-            this.Text = "Fotošop - navrácení úpravy";
-            btm = oldBtms[positionInOld];
-            positionInOld++;
-            btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            Text = "Fotošop";
         }
         private void upravy_odstinybarvy_5odstinu1barvy_Click(object sender, EventArgs e)
         {
@@ -134,7 +126,7 @@ namespace fotoshop
             if (cd.ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
 
             oldBtms.Insert(positionInOld, btm.copy());
-            this.Text = "Fotošop - načítání filtru";
+            Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             for (int y = 0; y < editedBmp.Height; y++)
                 for (int x = 0; x < editedBmp.Width; x++)
@@ -164,7 +156,7 @@ namespace fotoshop
                 }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            Text = "Fotošop";
         }
 
         private void upravy_odstinybarvy_5barev_Click(object sender, EventArgs e)
@@ -186,7 +178,7 @@ namespace fotoshop
             if (cd[4].ShowDialog() != DialogResult.OK) { MessageBox.Show("Nastala chyba v načítání barvy"); return; }
 
             oldBtms.Insert(positionInOld, btm.copy());
-            this.Text = "Fotošop - načítání filtru";
+            Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
             for (int y = 0; y < editedBmp.Height; y++)
                 for (int x = 0; x < editedBmp.Width; x++)
@@ -216,18 +208,18 @@ namespace fotoshop
                 }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            Text = "Fotošop";
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            btm.drawBitmap(new Point(0, 0), this);
+
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());
-            this.Text = "Fotošop - načítání filtru";
+            Text = "Fotošop - načítání filtru";
             Bitmap editedBmp = btm.bitmap;
 
             for (int y = 0; y < editedBmp.Height; y++) {
@@ -255,7 +247,26 @@ namespace fotoshop
             }
             btm.bitmap = editedBmp;
             btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            Text = "Fotošop";
+        }
+        private void zpet_Click(object sender, EventArgs e)
+        {
+            if (oldBtms.Count == 0) { return; }
+            Text = "Fotošop - navrácení úpravy";
+            oldBtms.Insert(positionInOld, btm.copy());
+            btm = oldBtms[positionInOld+1];
+            positionInOld++;
+            btm.drawBitmap(new Point(0, 0), this);
+            Text = "Fotošop";
+        }
+        private void redo_Click(object sender, EventArgs e)
+        {
+            if (oldBtms.Count == 0) { return; }
+            Text = "Fotošop - navrácení úpravy";
+            btm = oldBtms[positionInOld];
+            positionInOld--;
+            btm.drawBitmap(new Point(0, 0), this);
+            Text = "Fotošop";
         }
     }
 }
