@@ -63,3 +63,4 @@ C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.GenerateRes
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.exe
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.pdb
+D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.Input_Relief.resources
