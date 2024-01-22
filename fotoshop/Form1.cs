@@ -269,7 +269,7 @@ namespace fotoshop
         }
         private void upravy_relief_custom_Click(object sender, EventArgs e)
         {
-            Input_Relief input_Relief = new Input_Relief();
+            Input_Relief input_Relief = new Input_Relief(0);
             if (input_Relief.ShowDialog() != DialogResult.OK) { return; }
             reliefFilter(btm, input_Relief.SmerX, input_Relief.SmerY);
         }
@@ -389,5 +389,52 @@ namespace fotoshop
             }
         }
 
+        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+            oldBtms.Insert(positionInOld, btm.copy());
+            Text = "Fotošop - načítání filtru";
+            Bitmap bit1 = new Bitmap(btm.copy().bitmap);
+            Bitmap bit2 = new Bitmap(btm.copy().bitmap);//výsledek se bude zobrazovat tady
+            Color pixel1;
+            Color pixel2;
+            Color pixel3;
+            Color pixel4;
+            Color pixel5;
+            int svetlost;
+            for (int i = 0; i < bit1.Width; i++)
+            {
+                for (int j = 0; j < bit1.Height; j++)
+                {
+                    //pokud jsme na okraji bitmapy tak se okamžitě nastaví bílá a jde se na další pixel
+                    if (i + 2 >= bit1.Width || i - 2 <= 0 || j + 2 >= bit1.Height || j - 2 <= 0)
+                    {
+                        bit2.SetPixel(i, j, Color.FromArgb(0, 0, 0)); continue;
+                    }
+                    pixel1 = bit1.GetPixel(i, j);
+                    pixel2 = bit1.GetPixel(i + 2, j + 2);
+                    pixel3 = bit1.GetPixel(i - 2, j - 2);
+                    pixel4 = bit1.GetPixel(i - 2, j + 2);
+                    pixel5 = bit1.GetPixel(i + 2, j - 2);
+                    int pixel1svetlo = btm.svetelnost(pixel1);
+                    if (((btm.svetelnost(pixel2) - pixel1svetlo) < -50 || ((btm.svetelnost(pixel3) - pixel1svetlo) < -50) || ((btm.svetelnost(pixel4) - pixel1svetlo) < -50) || ((btm.svetelnost(pixel5) - pixel1svetlo) < -50)))
+                    {
+                        svetlost = 0;
+                    }
+                    else
+                    {
+                        svetlost = 255;
+                    }
+                    bit2.SetPixel(i, j, Color.FromArgb(svetlost, svetlost, svetlost));
+                }
+                if (i % 50 == 0)
+                {
+                    btm.bitmap = bit2;
+                    btm.drawBitmap(new Point(0, 0), this);
+                }
+            }
+            btm.bitmap = bit2;
+            btm.drawBitmap(new Point(0, 0), this);
+            Text = "Fotošop";
+        }
     }
 }

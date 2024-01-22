@@ -63,6 +63,7 @@
             this.colorMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,7 +181,8 @@
             this.upravyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem8,
-            this.toolStripMenuItem10});
+            this.toolStripMenuItem10,
+            this.toolStripMenuItem12});
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
             this.upravyToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.upravyToolStripMenuItem.Text = "Upravy";
@@ -323,6 +325,13 @@
             this.toolStripMenuItem5.Text = "◀";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.zpet_Click);
             // 
+            // toolStripMenuItem12
+            // 
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem12.Text = "Obrysy";
+            this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +385,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
         public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
     }
 }
 
