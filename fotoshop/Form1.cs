@@ -21,6 +21,7 @@ namespace fotoshop
         private BitovaMapa btm;
         List <BitovaMapa> oldBtms = new List<BitovaMapa>();
         private int positionInOld = 0;
+        BitovaMapa[] prehravatBtm = new BitovaMapa[4];
         public OpenFileDialog ofd = new OpenFileDialog(); //používám jeden file dialog na celej kód
         public Form1()
         {
@@ -47,7 +48,43 @@ namespace fotoshop
         {
             btm.drawFour();
         }
+        private void soubor_zobrazit_prehravat_Click(object sender, EventArgs e)
+        {
+            string ee = Environment.CurrentDirectory;
+            prehravatBtm[0] = new BitovaMapa(ee + @"/hasagi.jpg"); prehravatBtm[1] = new BitovaMapa(ee + @"/neon.jpg"); prehravatBtm[2] = new BitovaMapa(ee + @"/bb.jpg"); prehravatBtm[3] = new BitovaMapa(ee + @"/neco.jpg");
 
+            timer1.Interval = 2000;
+            timer1.Tick += Timer1_Tick;
+            timer1.Enabled = !timer1.Enabled;
+            prehravat_i = 0;
+            přehrávatFotoToolStripMenuItem.Text = (timer1.Enabled)? "Vypnout přehrávání": "Přehrávat foto";
+        }
+        int prehravat_i = 0;
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            if (prehravat_i == 4)
+            {
+                prehravat_i = 0;
+            }
+            prehravatBtm[prehravat_i].size = this.Size;
+            prehravatBtm[prehravat_i].drawBitmap(new Point(0, 0), this);
+            prehravat_i++;
+
+        }
+
+        private void soubor_zpet_Click(object sender, EventArgs e)
+        {
+            if (oldBtms.Count == 0) { return; }
+            this.Text = "Fotošop - navrácení úpravy";
+            btm = oldBtms[positionInOld];
+            positionInOld++;
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
+        }
+        private void soubor_zobrazit_fotoovelikosti_Click(object sender, EventArgs e)
+        {
+
+        }
         #region Úpravy
         private void upravy_cernobili_cernobila_Click(object sender, EventArgs e)
         {
@@ -234,7 +271,6 @@ namespace fotoshop
         {
             Input_Relief input_Relief = new Input_Relief();
             if (input_Relief.ShowDialog() != DialogResult.OK) { return; }
-            MessageBox.Show(input_Relief.SmerX.ToString() +" "+ input_Relief.SmerY.ToString());
             reliefFilter(btm, input_Relief.SmerX, input_Relief.SmerY);
         }
         //udělá reliéf podle nastavení smerX a smerY, pak rovnou vykreslí (taky zaznamenává změny pro mojí zpět funkci)
@@ -251,21 +287,18 @@ namespace fotoshop
             {
                 for (int j = 0; j < bit1.Height; j++)
                 {
+                    //pokud jsme na okraji bitmapy tak se okamžitě nastaví šedá a jde se na další pixel
+                    if (i + smerX >= bit1.Width || i+smerX <= 0 || j+smerY >= bit1.Height || j+smerY<=0)
+                    {
+                        bit2.SetPixel(i, j, Color.FromArgb(127,127,127)); continue;
+                    }
                     pixel1 = bit1.GetPixel(i, j);
-                    try
-                    {
-                        pixel2 = bit1.GetPixel(i + smerX, j + smerY);
-                    }
-                    catch
-                    {
-                        pixel2 = pixel1;
-                    }
+                    pixel2 = bit1.GetPixel(i + smerX, j + smerY);
                     svetlost = (150 + bmp.svetelnost(pixel2) - bmp.svetelnost(pixel1));
                     if (svetlost < 0)
                     {
                         svetlost = 0;
-                    }
-                    if (svetlost > 255)
+                    }else if (svetlost > 255)
                     {
                         svetlost = 255;
                     }
@@ -293,22 +326,6 @@ namespace fotoshop
             btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
         }
-        private void redo_Click(object sender, EventArgs e)
-        {
-            /*if (oldBtms.Count == 0) { return; }
-            Text = "Fotošop - navrácení úpravy";
-            try//try aby nešlo vyzkočit pryč z velikosti listu a necrashnout
-            {
-                positionInOld--;
-                btm = oldBtms[positionInOld];
-                btm.drawBitmap(new Point(0, 0), this);
-            }
-            catch
-            {
-                positionInOld++;
-            }
-            Text = "Fotošop";*/
-        }
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
             btm.drawBitmap(new Point(0, 0), this);
@@ -333,7 +350,7 @@ namespace fotoshop
             Import.drawBitmap(new Point(0, 0), form2, true);
             Import2.drawBitmap(new Point(0, 0), form2, true);
             //při změnění velikosti formu ze znovu vykreslí bitmapy na větší prostor
-            form2.SizeChanged += new System.EventHandler(Form2_SizeChanged);
+            form2.SizeChanged += new EventHandler(Form2_SizeChanged);
         }
         private void Form2_SizeChanged(object sender, EventArgs e)
         {
@@ -371,5 +388,6 @@ namespace fotoshop
                 return null;
             }
         }
+
     }
 }

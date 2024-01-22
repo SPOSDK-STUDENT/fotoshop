@@ -64,3 +64,4 @@ C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompile
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.exe
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.pdb
 D:\programko\h\fotosop\fotoshop\obj\Debug\fotoshop.Input_Relief.resources
+C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.Input_Relief.resources
