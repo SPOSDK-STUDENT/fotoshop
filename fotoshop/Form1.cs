@@ -451,7 +451,7 @@ namespace fotoshop
                 if (kapatkoBarvy.Contains(pixel)){ MessageBox.Show("Tato barva již byla nakliknutá!"); return; }
                 kapatkoBarvy.Add(pixel);
                 Panel p = new Panel();
-                p.Location = new Point(0 + (kapatkoPanel.Count*50), 300);p.Size = new Size(50, 100);
+                p.Location = new Point(0 + (kapatkoPanel.Count*50), this.Size.Height-100);p.Size = new Size(50, 100);
                 p.BackColor = pixel;
                 kapatkoPanel.Add(p);
                 this.Controls.Add(p);
