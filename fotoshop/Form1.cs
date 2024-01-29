@@ -73,15 +73,7 @@ namespace fotoshop
 
         }
 
-        private void soubor_zpet_Click(object sender, EventArgs e)
-        {
-            if (oldBtms.Count == 0) { return; }
-            this.Text = "Fotošop - navrácení úpravy";
-            btm = oldBtms[positionInOld];
-            positionInOld++;
-            btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
-        }
+   
         private void soubor_zobrazit_fotoovelikosti_Click(object sender, EventArgs e)
         {
             Input_Relief input = new Input_Relief(1);
@@ -325,12 +317,7 @@ namespace fotoshop
         #endregion
         private void zpet_Click(object sender, EventArgs e)
         {
-            if (oldBtms.Count == 0 || positionInOld >= oldBtms.Count) { return; }
-            Text = "Fotošop - navrácení úpravy";
-            btm = oldBtms[positionInOld];
-            positionInOld++;
-            btm.drawBitmap(new Point(0, 0), this);
-            Text = "Fotošop";
+
         }
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
@@ -469,6 +456,16 @@ namespace fotoshop
                 kapatkoPanel.Add(p);
                 this.Controls.Add(p);
             }
+        }
+
+        private void toolStripMenuItem19_Click(object sender, EventArgs e)
+        {
+            if (oldBtms.Count == 0) { return; }
+            this.Text = "Fotošop - navrácení úpravy";
+            btm = oldBtms[positionInOld];
+            positionInOld++;
+            btm.drawBitmap(new Point(0, 0), this);
+            this.Text = "Fotošop";
         }
     }
 }
