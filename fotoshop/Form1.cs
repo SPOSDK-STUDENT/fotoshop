@@ -13,13 +13,14 @@ using static System.Net.Mime.MediaTypeNames;
 using System.IO.Ports;
 using System.Threading;
 using System.Drawing.Imaging;
+using System.Diagnostics.Eventing.Reader;
 
 namespace fotoshop
 {
     public partial class Form1 : Form
     {
         private BitovaMapa btm;
-        List <BitovaMapa> oldBtms = new List<BitovaMapa>();
+        List<BitovaMapa> oldBtms = new List<BitovaMapa>();
         private int positionInOld = 0;
         BitovaMapa[] prehravatBtm = new BitovaMapa[4];
         public OpenFileDialog ofd = new OpenFileDialog(); //používám jeden file dialog na celej kód
@@ -57,7 +58,7 @@ namespace fotoshop
             timer1.Tick += Timer1_Tick;
             timer1.Enabled = !timer1.Enabled;
             prehravat_i = 0;
-            přehrávatFotoToolStripMenuItem.Text = (timer1.Enabled)? "Vypnout přehrávání": "Přehrávat foto";
+            přehrávatFotoToolStripMenuItem.Text = (timer1.Enabled) ? "Vypnout přehrávání" : "Přehrávat foto";
         }
         int prehravat_i = 0;
         private void Timer1_Tick(object sender, EventArgs e)
@@ -83,7 +84,12 @@ namespace fotoshop
         }
         private void soubor_zobrazit_fotoovelikosti_Click(object sender, EventArgs e)
         {
-
+            Input_Relief input = new Input_Relief(1);
+            if (input.ShowDialog() != DialogResult.OK) { return; }
+            if (ofd.ShowDialog() != DialogResult.OK) { return; }
+            btm = new BitovaMapa(ofd.FileName);
+            btm.size = new Size(input.SmerX, input.SmerY);
+            btm.drawBitmap(new Point(0, 0), this, btm.size);
         }
         #region Úpravy
         private void upravy_cernobili_cernobila_Click(object sender, EventArgs e)
@@ -157,7 +163,7 @@ namespace fotoshop
                     }
                 }
             btm.bitmap = editedBmp;
-            btm.drawBitmap(new Point(0,0), this);
+            btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
         }
         private void upravy_odstinybarvy_5odstinu1barvy_Click(object sender, EventArgs e)
@@ -288,9 +294,9 @@ namespace fotoshop
                 for (int j = 0; j < bit1.Height; j++)
                 {
                     //pokud jsme na okraji bitmapy tak se okamžitě nastaví šedá a jde se na další pixel
-                    if (i + smerX >= bit1.Width || i+smerX <= 0 || j+smerY >= bit1.Height || j+smerY<=0)
+                    if (i + smerX >= bit1.Width || i + smerX <= 0 || j + smerY >= bit1.Height || j + smerY <= 0)
                     {
-                        bit2.SetPixel(i, j, Color.FromArgb(127,127,127)); continue;
+                        bit2.SetPixel(i, j, Color.FromArgb(127, 127, 127)); continue;
                     }
                     pixel1 = bit1.GetPixel(i, j);
                     pixel2 = bit1.GetPixel(i + smerX, j + smerY);
@@ -298,13 +304,13 @@ namespace fotoshop
                     if (svetlost < 0)
                     {
                         svetlost = 0;
-                    }else if (svetlost > 255)
+                    } else if (svetlost > 255)
                     {
                         svetlost = 255;
                     }
                     bit2.SetPixel(i, j, Color.FromArgb(svetlost, svetlost, svetlost));
                 }
-                if (i%50 == 0)
+                if (i % 50 == 0)
                 {
                     bmp.bitmap = bit2;
                     bmp.drawBitmap(new Point(0, 0), this);
@@ -379,7 +385,7 @@ namespace fotoshop
                 attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
                 image.imageAttributes = attributes;
-                
+
                 return image;
             }
             catch (Exception ex)
@@ -435,6 +441,34 @@ namespace fotoshop
             btm.bitmap = bit2;
             btm.drawBitmap(new Point(0, 0), this);
             Text = "Fotošop";
+        }
+
+        bool kapatking = false;
+        List<Color> kapatkoBarvy = new List<Color>();
+        List<Panel> kapatkoPanel = new List<Panel>();
+        private void vyber_kapatko_Click(object sender, EventArgs e)
+        {
+            kapatking = true;
+        }
+
+        private void form_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (kapatking)
+            {
+                Color pixel = btm.bitmap.GetPixel(e.X, e.Y);
+                if (kapatkoBarvy.Contains(pixel)){ MessageBox.Show("Tato barva již byla nakliknutá!"); return; }
+                kapatkoBarvy.Add(pixel);
+                Panel p = new Panel();
+                p.Location = new Point(0 + (kapatkoPanel.Count*50), 300);p.Size = new Size(50, 100);
+                p.BackColor = pixel;
+                kapatkoPanel.Add(p);
+                this.Controls.Add(p);
+            }
         }
     }
 }

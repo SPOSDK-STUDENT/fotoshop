@@ -45,7 +45,7 @@ namespace fotoshop
         {
             Graphics grf = form.CreateGraphics();
             grf.Clear(Color.White);
-            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.bitmap.Width, this.bitmap.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
+            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.size.Width, this.size.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
             //gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
             grf.Dispose();
         }
@@ -53,7 +53,7 @@ namespace fotoshop
         {
             Graphics grf = form.CreateGraphics();
             grf.Clear(Color.White);
-            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, size.Width, size.Height), 0, 0, size.Width, size.Height, GraphicsUnit.Pixel, imageAttributes);
+            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, size.Width, size.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
             grf.Dispose();
         }
         public void drawBitmap(Point pos, Form form, bool noClear)

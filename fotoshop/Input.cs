@@ -37,7 +37,7 @@ namespace fotoshop
                     label6.Text = "";
 
                     label8.Text = "";
-                    label7.Text = "";
+                    label7.Text = "Hodnoty, které nejsou číslo budou 0";
                     break;
             }
         }

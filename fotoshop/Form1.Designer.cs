@@ -56,6 +56,7 @@
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.výběrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,8 @@
             this.colorMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -288,8 +290,17 @@
             this.toolStripMenuItem17.Text = "Vlastní";
             this.toolStripMenuItem17.Click += new System.EventHandler(this.upravy_relief_custom_Click);
             // 
+            // toolStripMenuItem12
+            // 
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(147, 22);
+            this.toolStripMenuItem12.Text = "Obrysy";
+            this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
+            // 
             // výběrToolStripMenuItem
             // 
+            this.výběrToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem18});
             this.výběrToolStripMenuItem.Name = "výběrToolStripMenuItem";
             this.výběrToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.výběrToolStripMenuItem.Text = "Výběr";
@@ -325,23 +336,33 @@
             this.toolStripMenuItem5.Text = "◀";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.zpet_Click);
             // 
-            // toolStripMenuItem12
+            // toolStripMenuItem18
             // 
-            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem12.Text = "Obrysy";
-            this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
+            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem18.Text = "Kapátko";
+            this.toolStripMenuItem18.Click += new System.EventHandler(this.vyber_kapatko_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(663, 223);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 562);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Fotošop";
+            this.Click += new System.EventHandler(this.form_Click);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -386,6 +407,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
