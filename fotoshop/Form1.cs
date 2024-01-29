@@ -72,8 +72,6 @@ namespace fotoshop
             prehravat_i++;
 
         }
-
-   
         private void soubor_zobrazit_fotoovelikosti_Click(object sender, EventArgs e)
         {
             Input_Relief input = new Input_Relief(1);
@@ -430,42 +428,50 @@ namespace fotoshop
             Text = "Fotošop";
         }
 
+        #region Kapátko
         bool kapatking = false;
         List<Color> kapatkoBarvy = new List<Color>();
         List<Panel> kapatkoPanel = new List<Panel>();
         private void vyber_kapatko_Click(object sender, EventArgs e)
         {
             kapatking = true;
+            oldBtms.Insert(positionInOld, btm.copy());
         }
-
-        private void form_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             if (kapatking)
             {
-                Color pixel = btm.bitmap.GetPixel(e.X, e.Y);
-                if (kapatkoBarvy.Contains(pixel)){ MessageBox.Show("Tato barva již byla nakliknutá!"); return; }
-                kapatkoBarvy.Add(pixel);
-                Panel p = new Panel();
-                p.Location = new Point(0 + (kapatkoPanel.Count*50), this.Size.Height-100);p.Size = new Size(50, 100);
-                p.BackColor = pixel;
-                kapatkoPanel.Add(p);
-                this.Controls.Add(p);
+                try
+                {
+                    Color pixel = btm.bitmap.GetPixel(e.X, e.Y);
+                    if (kapatkoBarvy.Contains(pixel)) { MessageBox.Show("Tato barva již byla nakliknutá!"); return; }
+                    kapatkoBarvy.Add(pixel);
+                    Panel p = new Panel();
+                    p.Location = new Point(0 + (kapatkoPanel.Count * 50), this.Size.Height - 100); p.Size = new Size(50, 100);
+                    p.BackColor = pixel;
+                    p.Name = kapatkoPanel.Count.ToString();
+                    p.Click += P_Click;
+                    kapatkoPanel.Add(p);
+                    this.Controls.Add(p);
+                }
+                catch { return; }
             }
         }
 
-        private void toolStripMenuItem19_Click(object sender, EventArgs e)
+        private void P_Click(object sender, EventArgs e)
         {
-            if (oldBtms.Count == 0) { return; }
-            this.Text = "Fotošop - navrácení úpravy";
-            btm = oldBtms[positionInOld];
-            positionInOld++;
-            btm.drawBitmap(new Point(0, 0), this);
-            this.Text = "Fotošop";
+            MessageBox.Show("panel: " + (sender as Panel).Name);
         }
+
+        private void dbg_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < kapatkoPanel.Count; i++)
+            {
+                this.Controls.Remove(kapatkoPanel[i]);
+            }
+            kapatkoPanel.Clear();
+            btm.drawBitmap(new Point(0,0), this);
+        }
+        #endregion
     }
 }

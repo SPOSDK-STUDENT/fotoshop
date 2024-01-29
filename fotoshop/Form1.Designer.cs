@@ -67,6 +67,7 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +94,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(700, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(775, 27);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -346,20 +347,21 @@
             this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem19,
-            this.toolStripMenuItem20});
-            this.menuStrip2.Location = new System.Drawing.Point(700, 0);
+            this.toolStripMenuItem20,
+            this.toolStripMenuItem5});
+            this.menuStrip2.Location = new System.Drawing.Point(775, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip2.Size = new System.Drawing.Size(126, 562);
+            this.menuStrip2.Size = new System.Drawing.Size(51, 562);
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // toolStripMenuItem19
             // 
             this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(113, 23);
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(33, 23);
             this.toolStripMenuItem19.Text = "◀";
-            this.toolStripMenuItem19.Click += new System.EventHandler(this.toolStripMenuItem19_Click);
+            this.toolStripMenuItem19.Click += new System.EventHandler(this.zpet_Click);
             // 
             // toolStripMenuItem20
             // 
@@ -367,6 +369,13 @@
             this.toolStripMenuItem20.Size = new System.Drawing.Size(113, 23);
             this.toolStripMenuItem20.Text = "🧪";
             this.toolStripMenuItem20.Click += new System.EventHandler(this.vyber_kapatko_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(113, 23);
+            this.toolStripMenuItem5.Text = "dbg";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
             // 
             // Form1
             // 
@@ -379,7 +388,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Fotošop";
-            this.Click += new System.EventHandler(this.form_Click);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -430,6 +438,7 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem20;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
 
