@@ -37,13 +37,13 @@ namespace fotoshop
         }
         private void soubor_otevrit_Click(object sender, EventArgs e)
         {
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                oldBtms.Insert(positionInOld, btm.copy());
-                BitovaMapa Import = new BitovaMapa(ofd.FileName);
-                btm.bitmap = Import.bitmap;
-                btm.drawBitmap(new Point(0, 0), this);
-            }
+            if (ofd.ShowDialog() != DialogResult.OK)
+            { return; }
+            oldBtms.Insert(positionInOld, btm.copy());
+            BitovaMapa Import = new BitovaMapa(ofd.FileName);
+            btm = Import;
+            btm.drawBitmap(new Point(0, 0), this);
+            
         }
         private void soubor_zobrazit_4_Click(object sender, EventArgs e)
         {

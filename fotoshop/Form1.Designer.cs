@@ -366,6 +366,7 @@
             this.toolStripMenuItem20.Name = "toolStripMenuItem20";
             this.toolStripMenuItem20.Size = new System.Drawing.Size(113, 23);
             this.toolStripMenuItem20.Text = "🧪";
+            this.toolStripMenuItem20.Click += new System.EventHandler(this.vyber_kapatko_Click);
             // 
             // Form1
             // 
