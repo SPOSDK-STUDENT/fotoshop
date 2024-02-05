@@ -44,7 +44,6 @@ namespace fotoshop
         public void drawBitmap(Point pos, Form form)
         {
             Graphics grf = form.CreateGraphics();
-            grf.Clear(Color.White);
             grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.size.Width, this.size.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
             //gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
             grf.Dispose();
