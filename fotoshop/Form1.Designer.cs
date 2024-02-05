@@ -68,6 +68,9 @@
             this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.secondTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -188,7 +191,8 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem8,
             this.toolStripMenuItem10,
-            this.toolStripMenuItem12});
+            this.toolStripMenuItem12,
+            this.toolStripMenuItem21});
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
             this.upravyToolStripMenuItem.Size = new System.Drawing.Size(65, 23);
             this.upravyToolStripMenuItem.Text = "Upravy";
@@ -200,7 +204,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem4});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem1.Text = "Černobílí";
             // 
             // toolStripMenuItem2
@@ -230,7 +234,7 @@
             this.toolStripMenuItem7,
             this.toolStripMenuItem9});
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem8.Text = "Odstíny Barvy";
             // 
             // toolStripMenuItem7
@@ -256,7 +260,7 @@
             this.toolStripMenuItem14,
             this.toolStripMenuItem17});
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem10.Text = "Reliéf";
             // 
             // toolStripMenuItem11
@@ -297,7 +301,7 @@
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem12.Text = "Obrysy";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
@@ -312,7 +316,7 @@
             // toolStripMenuItem18
             // 
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(128, 24);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem18.Text = "Kapátko";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.vyber_kapatko_Click);
             // 
@@ -359,23 +363,35 @@
             // toolStripMenuItem19
             // 
             this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(33, 23);
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(38, 23);
             this.toolStripMenuItem19.Text = "◀";
             this.toolStripMenuItem19.Click += new System.EventHandler(this.zpet_Click);
             // 
             // toolStripMenuItem20
             // 
             this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-            this.toolStripMenuItem20.Size = new System.Drawing.Size(113, 23);
+            this.toolStripMenuItem20.Size = new System.Drawing.Size(38, 23);
             this.toolStripMenuItem20.Text = "🧪";
             this.toolStripMenuItem20.Click += new System.EventHandler(this.vyber_kapatko_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(113, 23);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(38, 23);
             this.toolStripMenuItem5.Text = "dbg";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
+            // 
+            // toolStripMenuItem21
+            // 
+            this.toolStripMenuItem21.Name = "toolStripMenuItem21";
+            this.toolStripMenuItem21.Size = new System.Drawing.Size(180, 24);
+            this.toolStripMenuItem21.Text = "Třídění";
+            this.toolStripMenuItem21.Click += new System.EventHandler(this.upravy_trideni_Click);
+            // 
+            // secondTimer
+            // 
+            this.secondTimer.Interval = 1000;
+            this.secondTimer.Tick += new System.EventHandler(this.secondTimer_Tick);
             // 
             // Form1
             // 
@@ -439,6 +455,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem20;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer secondTimer;
     }
 }
 

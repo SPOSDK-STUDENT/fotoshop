@@ -315,7 +315,12 @@ namespace fotoshop
         #endregion
         private void zpet_Click(object sender, EventArgs e)
         {
-
+            if (oldBtms.Count == 0 || positionInOld >= oldBtms.Count) { return; }
+            Text = "Fotošop - navrácení úpravy";
+            btm = oldBtms[positionInOld];
+            positionInOld++;
+            btm.drawBitmap(new Point(0, 0), this);
+            Text = "Fotošop";
         }
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
@@ -473,5 +478,54 @@ namespace fotoshop
             btm.drawBitmap(new Point(0,0), this);
         }
         #endregion
+
+        Form form = new Form();
+        private void upravy_trideni_Click(object sender, EventArgs e)
+        {
+            form.Show();
+            form.Size = btm.size;
+            Button b1 = new Button();b1.Text = "Start";b1.Location = new Point(100, form.Size.Height - 100);form.Controls.Add(b1);
+            Button b2 = new Button();b2.Text = "Stop"; b2.Location = new Point(form.Size.Width - 100, form.Size.Height - 100); form.Controls.Add(b2);
+            btm.drawBitmap(new Point(0, 0), form);
+            b1.Click += B1_Click;
+            b2.Click += B2_Click;
+            //ThreadStart trideniThread = new ThreadStart(trideniStart);
+            
+        }
+        private void B2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void B1_Click(object sender, EventArgs e)
+        {
+            Thread triding = new Thread(new ThreadStart(trideni));
+            triding.Start();
+            secondTimer.Enabled = true;
+        }
+        static void trideniStart()
+        {
+
+        }
+        void trideni()
+        {
+            while (true)
+            {
+                Random random = new Random();
+                int i = random.Next(0, btm.size.Width);
+                int j = random.Next(0, btm.size.Height - 1);
+                Color pixel1 = btm.bitmap.GetPixel(i, j);
+                Color pixel2 = btm.bitmap.GetPixel(i, j + 1);
+                if (btm.svetelnost(pixel2) < btm.svetelnost(pixel1))
+                {
+                    btm.bitmap.SetPixel(i, j, pixel2);
+                    btm.bitmap.SetPixel(i, j + 1, pixel1);
+                }
+            }    
+        }
+        Random random = new Random();
+        private void secondTimer_Tick(object sender, EventArgs e)
+        {
+            btm.drawBitmap(new Point(0,0), form);
+        }
     }
 }
