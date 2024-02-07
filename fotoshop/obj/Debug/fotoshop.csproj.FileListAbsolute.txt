@@ -77,3 +77,4 @@ C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.csproj.Gen
 C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.csproj.CoreCompileInputs.cache
 C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.exe
 C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.pdb
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.Input_Relief.resources
