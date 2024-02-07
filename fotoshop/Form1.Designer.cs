@@ -70,6 +70,7 @@
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -191,7 +192,8 @@
             this.toolStripMenuItem8,
             this.toolStripMenuItem10,
             this.toolStripMenuItem12,
-            this.toolStripMenuItem21});
+            this.toolStripMenuItem21,
+            this.toolStripMenuItem22});
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
             this.upravyToolStripMenuItem.Size = new System.Drawing.Size(65, 23);
             this.upravyToolStripMenuItem.Text = "Upravy";
@@ -203,7 +205,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem4});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem1.Text = "Černobílí";
             // 
             // toolStripMenuItem2
@@ -233,7 +235,7 @@
             this.toolStripMenuItem7,
             this.toolStripMenuItem9});
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem8.Text = "Odstíny Barvy";
             // 
             // toolStripMenuItem7
@@ -259,7 +261,7 @@
             this.toolStripMenuItem14,
             this.toolStripMenuItem17});
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem10.Text = "Reliéf";
             // 
             // toolStripMenuItem11
@@ -300,14 +302,14 @@
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem12.Text = "Obrysy";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
             // toolStripMenuItem21
             // 
             this.toolStripMenuItem21.Name = "toolStripMenuItem21";
-            this.toolStripMenuItem21.Size = new System.Drawing.Size(164, 24);
+            this.toolStripMenuItem21.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem21.Text = "Třídění";
             this.toolStripMenuItem21.Click += new System.EventHandler(this.upravy_trideni_Click);
             // 
@@ -387,6 +389,13 @@
             this.toolStripMenuItem5.Text = "dbg";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
             // 
+            // toolStripMenuItem22
+            // 
+            this.toolStripMenuItem22.Name = "toolStripMenuItem22";
+            this.toolStripMenuItem22.Size = new System.Drawing.Size(180, 24);
+            this.toolStripMenuItem22.Text = "Zvětšenina";
+            this.toolStripMenuItem22.Click += new System.EventHandler(this.upravy_zvetsenina_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +460,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem22;
     }
 }
 

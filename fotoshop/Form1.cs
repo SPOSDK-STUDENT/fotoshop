@@ -479,6 +479,7 @@ namespace fotoshop
         }
         #endregion
 
+        #region Třídění
         static Form form = new Form();
         Label label1bb = new Label(); 
         private void upravy_trideni_Click(object sender, EventArgs e)
@@ -497,17 +498,11 @@ namespace fotoshop
         private void B2_Click(object sender, EventArgs e)
         {
             triding.Abort();
-            triding2.Abort();
-            triding3.Abort();
         }
         Thread triding = new Thread(Trideni);
-        Thread triding2 = new Thread(Trideni2);
-        Thread triding3 = new Thread(Trideni2);
         private void B1_Click(object sender, EventArgs e)
         {
             triding.Start();
-            triding2.Start();
-            triding3.Start();
         }
 
         static void Trideni()
@@ -530,24 +525,11 @@ namespace fotoshop
                 }
             }    
         }
-        static void Trideni2()
+        #endregion
+        bool zvetsening = false;
+        private void upravy_zvetsenina_Click(object sender, EventArgs e)
         {
-            BitovaMapa btm = staticBtm;
-            Random random = new Random();
-            while (true)
-            {
-                int i = random.Next(0, btm.size.Width);
-                int j = random.Next(0, btm.size.Height - 1);
-                Color pixel1 = btm.bitmap.GetPixel(i, j);
-                Color pixel2 = btm.bitmap.GetPixel(i, j + 1);
-                if (btm.svetelnost(pixel2) < btm.svetelnost(pixel1))
-                {
-                    btm.bitmap.SetPixel(i, j, pixel2);
-                    btm.bitmap.SetPixel(i, j + 1, pixel1);
-                    btm.drawPixel(new Point(i, j), form);
-                    btm.drawPixel(new Point(i, j + 1), form);
-                }
-            }
+            zvetsening = true;
         }
     }
 }
