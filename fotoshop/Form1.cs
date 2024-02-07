@@ -461,6 +461,10 @@ namespace fotoshop
                 }
                 catch { return; }
             }
+            if (zvetsening)
+            {
+                
+            }
         }
 
         private void P_Click(object sender, EventArgs e)
@@ -530,6 +534,11 @@ namespace fotoshop
         private void upravy_zvetsenina_Click(object sender, EventArgs e)
         {
             zvetsening = true;
+        }
+
+        private void form_MouseMove(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
