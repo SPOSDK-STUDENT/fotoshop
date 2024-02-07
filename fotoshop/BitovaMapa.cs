@@ -38,7 +38,8 @@ namespace fotoshop
             this.CestaKBitmape = "nieje :D";
             this.bitmap = new Bitmap(bitmap);
             this.size = size;
-        }
+        } 
+
 
         //vy to máte pojmenované NacistBitovouMapu
         public void drawBitmap(Point pos, Form form)
@@ -46,6 +47,13 @@ namespace fotoshop
             Graphics grf = form.CreateGraphics();
             grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.size.Width, this.size.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
             //gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
+            grf.Dispose();
+        }
+        public void drawPixel(Point pos, Form form)
+        {
+            Graphics grf = form.CreateGraphics();
+            Brush brush = new SolidBrush(bitmap.GetPixel(pos.X, pos.Y));
+            grf.FillRectangle(brush, pos.X, pos.Y, 1, 1);
             grf.Dispose();
         }
         public void drawBitmap(Point pos, Form form, Size size)

@@ -70,7 +70,6 @@
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.secondTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -388,11 +387,6 @@
             this.toolStripMenuItem5.Text = "dbg";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
             // 
-            // secondTimer
-            // 
-            this.secondTimer.Interval = 1000;
-            this.secondTimer.Tick += new System.EventHandler(this.secondTimer_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,7 +451,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer secondTimer;
     }
 }
 

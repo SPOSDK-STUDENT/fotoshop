@@ -479,38 +479,44 @@ namespace fotoshop
         }
         #endregion
 
-        Form form = new Form();
+        static Form form = new Form();
+        Label label1bb = new Label(); 
         private void upravy_trideni_Click(object sender, EventArgs e)
         {
             form.Show();
             form.Size = btm.size;
             Button b1 = new Button();b1.Text = "Start";b1.Location = new Point(100, form.Size.Height - 100);form.Controls.Add(b1);
             Button b2 = new Button();b2.Text = "Stop"; b2.Location = new Point(form.Size.Width - 100, form.Size.Height - 100); form.Controls.Add(b2);
-            btm.drawBitmap(new Point(0, 0), form);
+            label1bb.Text = "";
+            //btm.drawBitmap(new Point(0, 0), form);
             b1.Click += B1_Click;
             b2.Click += B2_Click;
-            //ThreadStart trideniThread = new ThreadStart(trideniStart);
-            
+            staticBtm = btm;
         }
+        static BitovaMapa staticBtm = new BitovaMapa();
         private void B2_Click(object sender, EventArgs e)
         {
-
+            triding.Abort();
+            triding2.Abort();
+            triding3.Abort();
         }
+        Thread triding = new Thread(Trideni);
+        Thread triding2 = new Thread(Trideni2);
+        Thread triding3 = new Thread(Trideni2);
         private void B1_Click(object sender, EventArgs e)
         {
-            Thread triding = new Thread(new ThreadStart(trideni));
             triding.Start();
-            secondTimer.Enabled = true;
+            triding2.Start();
+            triding3.Start();
         }
-        static void trideniStart()
-        {
 
-        }
-        void trideni()
+        static void Trideni()
         {
+            BitovaMapa btm = staticBtm;
+            Random random = new Random();
+            btm.drawBitmap(new Point(0,0), form);
             while (true)
             {
-                Random random = new Random();
                 int i = random.Next(0, btm.size.Width);
                 int j = random.Next(0, btm.size.Height - 1);
                 Color pixel1 = btm.bitmap.GetPixel(i, j);
@@ -519,13 +525,29 @@ namespace fotoshop
                 {
                     btm.bitmap.SetPixel(i, j, pixel2);
                     btm.bitmap.SetPixel(i, j + 1, pixel1);
+                    btm.drawPixel(new Point(i, j), form);
+                    btm.drawPixel(new Point(i, j+1), form);
                 }
             }    
         }
-        Random random = new Random();
-        private void secondTimer_Tick(object sender, EventArgs e)
+        static void Trideni2()
         {
-            btm.drawBitmap(new Point(0,0), form);
+            BitovaMapa btm = staticBtm;
+            Random random = new Random();
+            while (true)
+            {
+                int i = random.Next(0, btm.size.Width);
+                int j = random.Next(0, btm.size.Height - 1);
+                Color pixel1 = btm.bitmap.GetPixel(i, j);
+                Color pixel2 = btm.bitmap.GetPixel(i, j + 1);
+                if (btm.svetelnost(pixel2) < btm.svetelnost(pixel1))
+                {
+                    btm.bitmap.SetPixel(i, j, pixel2);
+                    btm.bitmap.SetPixel(i, j + 1, pixel1);
+                    btm.drawPixel(new Point(i, j), form);
+                    btm.drawPixel(new Point(i, j + 1), form);
+                }
+            }
         }
     }
 }
