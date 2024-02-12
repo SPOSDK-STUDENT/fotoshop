@@ -23,7 +23,7 @@ namespace fotoshop
 
         public BitovaMapa()
         {
-            this.CestaKBitmape = Environment.CurrentDirectory + @"\hasagi.jpg";
+            this.CestaKBitmape = Environment.CurrentDirectory + @"\obr4.jpg";
             this.bitmap = new Bitmap(this.CestaKBitmape);
             this.size = bitmap.Size;
         }
