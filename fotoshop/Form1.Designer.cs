@@ -59,6 +59,7 @@
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
+            this.výběrToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.výběrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.paletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,9 +71,8 @@
             this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.výběrToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -325,6 +325,13 @@
             this.toolStripMenuItem22.Text = "Zvětšenina";
             this.toolStripMenuItem22.Click += new System.EventHandler(this.upravy_zvetsenina_Click);
             // 
+            // výběrToolStripMenuItem1
+            // 
+            this.výběrToolStripMenuItem1.Name = "výběrToolStripMenuItem1";
+            this.výběrToolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.výběrToolStripMenuItem1.Text = "výběr";
+            this.výběrToolStripMenuItem1.Click += new System.EventHandler(this.výběrToolStripMenuItem1_Click);
+            // 
             // výběrToolStripMenuItem
             // 
             this.výběrToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -417,13 +424,6 @@
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(39, 23);
             this.cutToolStripMenuItem.Text = "cut";
             // 
-            // výběrToolStripMenuItem1
-            // 
-            this.výběrToolStripMenuItem1.Name = "výběrToolStripMenuItem1";
-            this.výběrToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.výběrToolStripMenuItem1.Text = "výběr";
-            this.výběrToolStripMenuItem1.Click += new System.EventHandler(this.výběrToolStripMenuItem1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +437,9 @@
             this.Name = "Form1";
             this.Text = "Fotošop";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);

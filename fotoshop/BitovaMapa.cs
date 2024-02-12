@@ -56,6 +56,23 @@ namespace fotoshop
             grf.FillRectangle(brush, pos.X, pos.Y, 1, 1);
             grf.Dispose();
         }
+        public void drawRectangle(Point pos, Size size, Form form)
+        {
+            Graphics grf = form.CreateGraphics();
+            Pen brush = new Pen(Color.Red);
+            if (size.Width < 0)
+            {
+                pos.X += size.Width;
+                size.Width = Math.Abs(size.Width);
+            }
+            if (size.Height < 0)
+            {
+                pos.Y += size.Height;
+                size.Height = Math.Abs(size.Height);
+            }
+            grf.DrawRectangle(brush, pos.X, pos.Y, size.Width, size.Height);
+            grf.Dispose();
+        }
         public void drawBitmap(Point pos, Form form, Size size)
         {
             Graphics grf = form.CreateGraphics();

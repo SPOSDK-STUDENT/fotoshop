@@ -24,16 +24,17 @@ namespace fotoshop
         private int positionInOld = 0;
         BitovaMapa[] prehravatBtm = new BitovaMapa[4];
         public OpenFileDialog ofd = new OpenFileDialog(); //používám jeden file dialog na celej kód
+        public static Point btmDrawPos = new Point(80, 60);
         public Form1()
         {
             btm = new BitovaMapa();
             InitializeComponent();
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             ofd.Title = "Otevřít"; ofd.Filter = "jpg obrázky (*.jpg)|*.jpg|Jpeg obrázky (*jpeg)|*.jpeg|png obrázky (*.png)|*.png";
         }
         private void soubor_zobrazit_foto_Click(object sender, EventArgs e)
         {
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
         }
         private void soubor_otevrit_Click(object sender, EventArgs e)
         {
@@ -42,7 +43,7 @@ namespace fotoshop
             oldBtms.Insert(positionInOld, btm.copy());
             BitovaMapa Import = new BitovaMapa(ofd.FileName);
             btm = Import;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             
         }
         private void soubor_zobrazit_4_Click(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace fotoshop
                 prehravat_i = 0;
             }
             prehravatBtm[prehravat_i].size = this.Size;
-            prehravatBtm[prehravat_i].drawBitmap(new Point(80, 60), this);
+            prehravatBtm[prehravat_i].drawBitmap(btmDrawPos, this);
             prehravat_i++;
 
         }
@@ -99,7 +100,7 @@ namespace fotoshop
                 }
             }
             btm.bitmap = editedBmp;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
         private void upravy_cernobili_bilacerna_Click(object sender, EventArgs e)
@@ -120,7 +121,7 @@ namespace fotoshop
                     }
                 }
             btm.bitmap = editedBmp;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
         private void upravy_cernobili_petodstinu_Click(object sender, EventArgs e)
@@ -153,7 +154,7 @@ namespace fotoshop
                     }
                 }
             btm.bitmap = editedBmp;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
         private void upravy_odstinybarvy_5odstinu1barvy_Click(object sender, EventArgs e)
@@ -192,7 +193,7 @@ namespace fotoshop
                     }
                 }
             btm.bitmap = editedBmp;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
         private void upravy_odstinybarvy_5barev_Click(object sender, EventArgs e)
@@ -243,7 +244,7 @@ namespace fotoshop
                     }
                 }
             btm.bitmap = editedBmp;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
         #region Reliéf
@@ -303,11 +304,11 @@ namespace fotoshop
                 if (i % 50 == 0)
                 {
                     bmp.bitmap = bit2;
-                    bmp.drawBitmap(new Point(80, 60), this);
+                    bmp.drawBitmap(btmDrawPos, this);
                 }
             }
             bmp.bitmap = bit2;
-            bmp.drawBitmap(new Point(80, 60), this);
+            bmp.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
             return bmp;
         }
@@ -319,12 +320,12 @@ namespace fotoshop
             Text = "Fotošop - navrácení úpravy";
             btm = oldBtms[positionInOld];
             positionInOld++;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
         }
 
         Form form2 = new Form();
@@ -425,11 +426,11 @@ namespace fotoshop
                 if (i % 50 == 0)
                 {
                     btm.bitmap = bit2;
-                    btm.drawBitmap(new Point(80, 60), this);
+                    btm.drawBitmap(btmDrawPos, this);
                 }
             }
             btm.bitmap = bit2;
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
             Text = "Fotošop";
         }
 
@@ -461,10 +462,6 @@ namespace fotoshop
                 }
                 catch { return; }
             }
-            if (zvetsening)
-            {
-                
-            }
         }
 
         private void P_Click(object sender, EventArgs e)
@@ -479,7 +476,7 @@ namespace fotoshop
                 this.Controls.Remove(kapatkoPanel[i]);
             }
             kapatkoPanel.Clear();
-            btm.drawBitmap(new Point(80, 60), this);
+            btm.drawBitmap(btmDrawPos, this);
         }
         #endregion
 
@@ -513,7 +510,7 @@ namespace fotoshop
         {
             BitovaMapa btm = staticBtm;
             Random random = new Random();
-            btm.drawBitmap(new Point(80, 60), form);
+            btm.drawBitmap(new Point(0,0), form);
             while (true)
             {
                 int i = random.Next(0, btm.size.Width);
@@ -530,15 +527,46 @@ namespace fotoshop
             }    
         }
         #endregion
-        bool zvetsening = false;
+        bool vyrezing = false;
+        bool vyrezingClickDown = false;
         private void upravy_zvetsenina_Click(object sender, EventArgs e)
         {
-            zvetsening = true;
+            vyrezing = true;
         }
 
         private void form_MouseMove(object sender, MouseEventArgs e)
         {
+            if (vyrezingClickDown)
+            {
+                btm.drawBitmap(btmDrawPos, this);
+                lastVyrezPos = new Size(e.X - vyrezPos.X, e.Y - vyrezPos.Y);
+                btm.drawRectangle(vyrezPos, lastVyrezPos, this);
+            }
+        }
+        Point vyrezPos;
+        Size lastVyrezPos;
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (vyrezing)
+            {
+                vyrezingClickDown = true;
+                vyrezPos = e.Location;
+            }
+        }
 
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (vyrezingClickDown)
+            {
+                Pen pero = new Pen(Color.Red);
+                pero.Width = 1;
+                Bitmap image = btm.bitmap;
+                Graphics kresba = Graphics.FromImage(image);
+
+                kresba.DrawRectangle(pero, new Rectangle(vyrezPos, lastVyrezPos));
+                btm.bitmap = image;
+                vyrezingClickDown = false;
+            }
         }
 
         private void výběrToolStripMenuItem1_Click(object sender, EventArgs e)
