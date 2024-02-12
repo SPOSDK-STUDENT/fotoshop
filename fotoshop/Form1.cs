@@ -526,6 +526,14 @@ namespace fotoshop
                 }
             }    
         }
+        private void výběrToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            form = new Form();
+            form.Show();
+            form.Size = btm.size;
+            Button b1 = new Button(); b1.Text = "Start"; b1.Location = new Point(100, form.Size.Height - 100); form.Controls.Add(b1);
+            Button b2 = new Button(); b2.Text = "Stop"; b2.Location = new Point(form.Size.Width - 80, form.Size.Height - 80); form.Controls.Add(b2);
+        }
         #endregion
         bool vyrezing = false;
         bool vyrezingClickDown = false;
@@ -569,15 +577,9 @@ namespace fotoshop
             }
         }
 
-        private void výběrToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void Form1_Resize(object sender, EventArgs e)
         {
-            form.Show();
-            form.Size = btm.size;
-            Button b1 = new Button(); b1.Text = "Start"; b1.Location = new Point(100, form.Size.Height - 100); form.Controls.Add(b1);
-            Button b2 = new Button(); b2.Text = "Stop"; b2.Location = new Point(form.Size.Width - 80, form.Size.Height - 80); form.Controls.Add(b2);
-            label1bb.Text = "";
-
-
+            btm.drawBitmap(btmDrawPos, this);
         }
     }
 }
