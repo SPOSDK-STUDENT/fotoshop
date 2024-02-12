@@ -15,6 +15,7 @@ using System.Threading;
 using System.Drawing.Imaging;
 using System.Diagnostics.Eventing.Reader;
 
+
 namespace fotoshop
 {
     public partial class Form1 : Form
@@ -573,6 +574,10 @@ namespace fotoshop
 
                 kresba.DrawRectangle(pero, new Rectangle(vyrezPos, lastVyrezPos));
                 btm.bitmap = image;
+                form = new Form();
+                form.Show();
+                Bitmap ee = new Bitmap(btm.bitmap);//nefunguje
+                BitovaMapa bb = new BitovaMapa(btm.bitmap);
                 vyrezingClickDown = false;
             }
         }
