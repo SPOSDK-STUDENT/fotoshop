@@ -11,7 +11,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace fotoshop
 {
-    internal class BitovaMapa
+    public class BitovaMapa
     {
         public string CestaKBitmape { get; set; }
         public Bitmap bitmap { get; set; }

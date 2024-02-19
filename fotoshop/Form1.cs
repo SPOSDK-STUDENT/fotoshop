@@ -536,50 +536,34 @@ namespace fotoshop
             Button b2 = new Button(); b2.Text = "Stop"; b2.Location = new Point(form.Size.Width - 80, form.Size.Height - 80); form.Controls.Add(b2);
         }
         #endregion
-        bool vyrezing = false;
-        bool vyrezingClickDown = false;
         private void upravy_zvetsenina_Click(object sender, EventArgs e)
         {
-            vyrezing = true;
+            vyrez vyrezForm = new vyrez(btm.bitmap);
+            vyrezForm.ShowDialog();
+            try
+            {
+                BitovaMapa bitm = vyrezForm.btm;
+                btm = new BitovaMapa(bitm.bitmap, bitm.bitmap.Size);
+                btm.drawBitmap(btmDrawPos, this);
+            }
+            catch
+            {
+                MessageBox.Show("Vyříznutý obrázek se nenačetl správně");
+            }
         }
 
         private void form_MouseMove(object sender, MouseEventArgs e)
         {
-            if (vyrezingClickDown)
-            {
-                btm.drawBitmap(btmDrawPos, this);
-                lastVyrezPos = new Size(e.X - vyrezPos.X, e.Y - vyrezPos.Y);
-                btm.drawRectangle(vyrezPos, lastVyrezPos, this);
-            }
+            
         }
-        Point vyrezPos;
-        Size lastVyrezPos;
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (vyrezing)
-            {
-                vyrezingClickDown = true;
-                vyrezPos = e.Location;
-            }
+            
         }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
-            if (vyrezingClickDown)
-            {
-                Pen pero = new Pen(Color.Red);
-                pero.Width = 1;
-                Bitmap image = btm.bitmap;
-                Graphics kresba = Graphics.FromImage(image);
-
-                kresba.DrawRectangle(pero, new Rectangle(vyrezPos, lastVyrezPos));
-                btm.bitmap = image;
-                form = new Form();
-                form.Show();
-                Bitmap ee = new Bitmap(btm.bitmap);//nefunguje
-                BitovaMapa bb = new BitovaMapa(btm.bitmap);
-                vyrezingClickDown = false;
-            }
+            
         }
 
         private void Form1_Resize(object sender, EventArgs e)
