@@ -57,8 +57,8 @@
             // vyříznoutToolStripMenuItem
             // 
             this.vyříznoutToolStripMenuItem.Name = "vyříznoutToolStripMenuItem";
-            this.vyříznoutToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.vyříznoutToolStripMenuItem.Text = "Vyříznout";
+            this.vyříznoutToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.vyříznoutToolStripMenuItem.Text = "Vyříznout Označené";
             this.vyříznoutToolStripMenuItem.Click += new System.EventHandler(this.vyříznoutToolStripMenuItem_Click);
             // 
             // navrátitVyříznutéToolStripMenuItem
@@ -76,7 +76,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "vyrez";
-            this.Text = "Dialogové Okno Výřezu";
+            this.Text = "Dialogové Okno Výřezu Obrázku";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);

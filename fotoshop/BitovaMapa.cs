@@ -44,57 +44,63 @@ namespace fotoshop
         //vy to máte pojmenované NacistBitovouMapu
         public void drawBitmap(Point pos, Form form)
         {
-            Graphics grf = form.CreateGraphics();
-            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.size.Width, this.size.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
-            //gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
-            grf.Dispose();
+            using (Graphics grf = form.CreateGraphics())
+            {
+                grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.size.Width, this.size.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
+                //gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
+            }
         }
         public void drawPixel(Point pos, Form form)
         {
-            Graphics grf = form.CreateGraphics();
-            Brush brush = new SolidBrush(bitmap.GetPixel(pos.X, pos.Y));
-            grf.FillRectangle(brush, pos.X, pos.Y, 1, 1);
-            grf.Dispose();
+            using (Graphics grf = form.CreateGraphics())
+            {
+                Brush brush = new SolidBrush(bitmap.GetPixel(pos.X, pos.Y));
+                grf.FillRectangle(brush, pos.X, pos.Y, 1, 1);
+            }
         }
         public void drawRectangle(Point pos, Size size, Form form)
         {
-            Graphics grf = form.CreateGraphics();
-            Pen brush = new Pen(Color.Red);
-            if (size.Width < 0)
+            using (Graphics grf = form.CreateGraphics())
             {
-                pos.X += size.Width;
-                size.Width = Math.Abs(size.Width);
+                Pen brush = new Pen(Color.Red);
+                if (size.Width < 0)
+                {
+                    pos.X += size.Width;
+                    size.Width = Math.Abs(size.Width);
+                }
+                if (size.Height < 0)
+                {
+                    pos.Y += size.Height;
+                    size.Height = Math.Abs(size.Height);
+                }
+                grf.DrawRectangle(brush, pos.X, pos.Y, size.Width, size.Height);
             }
-            if (size.Height < 0)
-            {
-                pos.Y += size.Height;
-                size.Height = Math.Abs(size.Height);
-            }
-            grf.DrawRectangle(brush, pos.X, pos.Y, size.Width, size.Height);
-            grf.Dispose();
         }
         public void drawBitmap(Point pos, Form form, Size size)
         {
-            Graphics grf = form.CreateGraphics();
-            grf.Clear(Color.White);
-            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, size.Width, size.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
-            grf.Dispose();
+            using (Graphics grf = form.CreateGraphics())
+            {
+                grf.Clear(Color.FromArgb(64, 64, 64));
+                grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, size.Width, size.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
+            }
         }
         public void drawBitmap(Point pos, Form form, bool noClear)
         {
-            Graphics grf = form.CreateGraphics(); 
-            grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.bitmap.Width, this.bitmap.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
-            grf.Dispose();
+            using (Graphics grf = form.CreateGraphics())
+            {
+                grf.DrawImage(this.bitmap, new Rectangle(pos.X, pos.Y, this.bitmap.Width, this.bitmap.Height), 0, 0, this.bitmap.Width, this.bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
+            }
         }
         public void drawFour()
         {
             Form form = Form.ActiveForm;
-            Graphics grf = form.CreateGraphics();
-            grf.DrawImage(this.bitmap, 0, 0, form.Width / 2, form.Height / 2);
-            grf.DrawImage(this.bitmap, 0, form.Height / 2, form.Width / 2, form.Height / 2);
-            grf.DrawImage(this.bitmap, form.Width / 2, 0, form.Width / 2, form.Height / 2);
-            grf.DrawImage(this.bitmap, form.Width / 2, form.Height / 2, form.Width / 2, form.Height / 2);
-            grf.Dispose();
+            using (Graphics grf = form.CreateGraphics())
+            {
+                grf.DrawImage(this.bitmap, 0, 0, form.Width / 2, form.Height / 2);
+                grf.DrawImage(this.bitmap, 0, form.Height / 2, form.Width / 2, form.Height / 2);
+                grf.DrawImage(this.bitmap, form.Width / 2, 0, form.Width / 2, form.Height / 2);
+                grf.DrawImage(this.bitmap, form.Width / 2, form.Height / 2, form.Width / 2, form.Height / 2);
+            }
         }
         public int svetelnost(Color pixel)
         {

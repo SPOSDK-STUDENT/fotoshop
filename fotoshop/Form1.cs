@@ -544,26 +544,12 @@ namespace fotoshop
             {
                 BitovaMapa bitm = vyrezForm.btm;
                 btm = new BitovaMapa(bitm.bitmap, bitm.bitmap.Size);
-                btm.drawBitmap(btmDrawPos, this);
+                btm.drawBitmap(btmDrawPos, this, btm.size);
             }
             catch
             {
                 MessageBox.Show("Vyříznutý obrázek se nenačetl správně");
             }
-        }
-
-        private void form_MouseMove(object sender, MouseEventArgs e)
-        {
-            
-        }
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-            
         }
 
         private void Form1_Resize(object sender, EventArgs e)
