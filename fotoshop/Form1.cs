@@ -450,7 +450,7 @@ namespace fotoshop
             {
                 try
                 {
-                    Color pixel = btm.bitmap.GetPixel(e.X, e.Y);
+                    Color pixel = btm.bitmap.GetPixel(e.X-btmDrawPos.X, e.Y-btmDrawPos.Y);
                     if (kapatkoBarvy.Contains(pixel)) { MessageBox.Show("Tato barva již byla nakliknutá!"); return; }
                     kapatkoBarvy.Add(pixel);
                     Panel p = new Panel();

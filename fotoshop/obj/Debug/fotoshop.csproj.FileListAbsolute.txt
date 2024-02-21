@@ -79,3 +79,4 @@ C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.exe
 C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.pdb
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.Input_Relief.resources
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.vyrez.resources
+C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.vyrez.resources
