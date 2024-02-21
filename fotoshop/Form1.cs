@@ -386,7 +386,10 @@ namespace fotoshop
                 return null;
             }
         }
-
+        private void zpet()
+        {
+            oldBtms.Insert(positionInOld, btm.copy());
+        }
         private void toolStripMenuItem12_Click(object sender, EventArgs e)
         {
             oldBtms.Insert(positionInOld, btm.copy());
@@ -441,7 +444,7 @@ namespace fotoshop
         List<Panel> kapatkoPanel = new List<Panel>();
         private void vyber_kapatko_Click(object sender, EventArgs e)
         {
-            kapatking = true;
+            kapatking = !kapatking;
             oldBtms.Insert(positionInOld, btm.copy());
         }
         private void Form1_MouseClick(object sender, MouseEventArgs e)
@@ -538,6 +541,7 @@ namespace fotoshop
         #endregion
         private void upravy_zvetsenina_Click(object sender, EventArgs e)
         {
+            zpet();
             vyrez vyrezForm = new vyrez(btm.bitmap);
             vyrezForm.ShowDialog();
             try
