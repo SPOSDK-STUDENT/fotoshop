@@ -560,5 +560,11 @@ namespace fotoshop
         {
             btm.drawBitmap(btmDrawPos, this);
         }
+
+        private void convertToText_Click(object sender, EventArgs e)
+        {
+            Text text = new Text(btm.bitmap);
+            text.ShowDialog();
+        }
     }
 }

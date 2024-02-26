@@ -72,6 +72,7 @@
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem23 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -221,7 +222,8 @@
             this.toolStripMenuItem10,
             this.toolStripMenuItem12,
             this.toolStripMenuItem21,
-            this.toolStripMenuItem22});
+            this.toolStripMenuItem22,
+            this.toolStripMenuItem23});
             this.upravyToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.upravyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
@@ -246,7 +248,7 @@
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
             this.toolStripMenuItem2.Text = "Černobílá";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.upravy_cernobili_cernobila_Click);
             // 
@@ -255,7 +257,7 @@
             this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(172, 22);
             this.toolStripMenuItem3.Text = "Bílá a Černá";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.upravy_cernobili_bilacerna_Click);
             // 
@@ -264,7 +266,7 @@
             this.toolStripMenuItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(172, 22);
             this.toolStripMenuItem4.Text = "5 Odstínů šedi";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.upravy_cernobili_petodstinu_Click);
             // 
@@ -285,7 +287,7 @@
             this.toolStripMenuItem7.BackColor = System.Drawing.Color.Gray;
             this.toolStripMenuItem7.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem7.Text = "Odstíny 5 barev";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.upravy_odstinybarvy_5barev_Click);
             // 
@@ -294,7 +296,7 @@
             this.toolStripMenuItem9.BackColor = System.Drawing.Color.Gray;
             this.toolStripMenuItem9.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem9.Text = "5 odstínů barvy";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.upravy_odstinybarvy_5odstinu1barvy_Click);
             // 
@@ -318,7 +320,7 @@
             this.toolStripMenuItem11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem11.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem11.Text = "Zhora zleva";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.upravy_relief_zhorazleva_Click);
             // 
@@ -327,7 +329,7 @@
             this.toolStripMenuItem15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem15.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem15.Text = "Zhora zprava";
             this.toolStripMenuItem15.Click += new System.EventHandler(this.upravy_relief_zhorazprava_Click);
             // 
@@ -336,7 +338,7 @@
             this.toolStripMenuItem16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem16.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem16.Text = "Zdola zprava";
             this.toolStripMenuItem16.Click += new System.EventHandler(this.upravy_relief_zdolazprava_Click);
             // 
@@ -345,7 +347,7 @@
             this.toolStripMenuItem14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem14.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem14.Text = "Zdola zleva";
             this.toolStripMenuItem14.Click += new System.EventHandler(this.upravy_relief_zdolazleva_Click);
             // 
@@ -354,7 +356,7 @@
             this.toolStripMenuItem17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem17.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            this.toolStripMenuItem17.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem17.Text = "Vlastní";
             this.toolStripMenuItem17.Click += new System.EventHandler(this.upravy_relief_custom_Click);
             // 
@@ -404,7 +406,7 @@
             this.toolStripMenuItem18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem18.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(123, 22);
             this.toolStripMenuItem18.Text = "Kapátko";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.vyber_kapatko_Click);
             // 
@@ -481,6 +483,15 @@
             this.toolStripMenuItem5.Text = "dbg";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
             // 
+            // toolStripMenuItem23
+            // 
+            this.toolStripMenuItem23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStripMenuItem23.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem23.Name = "toolStripMenuItem23";
+            this.toolStripMenuItem23.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem23.Text = "Převod do Textu";
+            this.toolStripMenuItem23.Click += new System.EventHandler(this.convertToText_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +560,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem22;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem23;
     }
 }
 
