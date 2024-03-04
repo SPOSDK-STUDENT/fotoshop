@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +14,10 @@ namespace fotoshop
 {
     public partial class Text : Form
     {
-        public Text(Bitmap bitm)
+        public Text(BitovaMapa bitm)
         {
             InitializeComponent();
-            btm.bitmap = bitm;
+            btm = bitm;
         }
         BitovaMapa btm = new BitovaMapa();
         private void Text_Load(object sender, EventArgs e)
@@ -56,6 +58,10 @@ namespace fotoshop
                 textOutput += "\r\n";
             }
             richTextBox1.Text = textOutput;
+            string nega = btm.CestaKBitmape;
+            int g = nega.IndexOf('.');
+            if (g <= 0) nega = nega.Substring(g + 1);
+            File.WriteAllText((nega)+".txt", textOutput);
         }
 
         private void Text_Resize(object sender, EventArgs e)

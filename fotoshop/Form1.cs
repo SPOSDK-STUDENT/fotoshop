@@ -563,8 +563,14 @@ namespace fotoshop
 
         private void convertToText_Click(object sender, EventArgs e)
         {
-            Text text = new Text(btm.bitmap);
+            Text text = new Text(btm);
             text.ShowDialog();
+        }
+
+        private void toolStripMenuItem24_Click(object sender, EventArgs e)
+        {
+            MapaBarev mb = new MapaBarev();
+            mb.Show();
         }
     }
 }
