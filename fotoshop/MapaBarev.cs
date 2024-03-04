@@ -26,13 +26,16 @@ namespace fotoshop
             map[0] = new ColorMap();
             map[1] = new ColorMap();
             map[0].OldColor = sourceBitmap.GetPixel(e.X, e.Y);
-            map[0].NewColor = Color.FromArgb(0, 69, 69, 69);
+            ColorDialog cd = new ColorDialog();
+            cd.ShowDialog();
+            map[0].NewColor = cd.Color;
             ImageAttributes imageAttributes = new ImageAttributes();
             imageAttributes.SetRemapTable(map);
             Graphics g = Graphics.FromImage(destBitmap);
             g.DrawImage(sourceBitmap, new Rectangle(0, 0, sourceBitmap.Width, sourceBitmap.Height), 0,0, sourceBitmap.Width, sourceBitmap.Height, GraphicsUnit.Pixel, imageAttributes);
             g.Dispose();
             pictureBox1.Image = destBitmap;
+            pictureBox2.Image = destBitmap;
         }
     }
 }

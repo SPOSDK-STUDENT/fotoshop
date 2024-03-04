@@ -73,7 +73,6 @@
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem24 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -224,8 +223,7 @@
             this.toolStripMenuItem12,
             this.toolStripMenuItem21,
             this.toolStripMenuItem22,
-            this.toolStripMenuItem23,
-            this.toolStripMenuItem24});
+            this.toolStripMenuItem23});
             this.upravyToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.upravyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
@@ -250,7 +248,7 @@
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "Černobílá";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.upravy_cernobili_cernobila_Click);
             // 
@@ -259,7 +257,7 @@
             this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "Bílá a Černá";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.upravy_cernobili_bilacerna_Click);
             // 
@@ -268,7 +266,7 @@
             this.toolStripMenuItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem4.Text = "5 Odstínů šedi";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.upravy_cernobili_petodstinu_Click);
             // 
@@ -452,6 +450,7 @@
             this.colorMapToolStripMenuItem.Name = "colorMapToolStripMenuItem";
             this.colorMapToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.colorMapToolStripMenuItem.Text = "ColorMap";
+            this.colorMapToolStripMenuItem.Click += new System.EventHandler(this.colorMapToolStripMenuItem_Click);
             // 
             // menuStrip2
             // 
@@ -493,13 +492,6 @@
             this.toolStripMenuItem5.Size = new System.Drawing.Size(33, 19);
             this.toolStripMenuItem5.Text = "dbg";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
-            // 
-            // toolStripMenuItem24
-            // 
-            this.toolStripMenuItem24.Name = "toolStripMenuItem24";
-            this.toolStripMenuItem24.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem24.Text = "Mapa Barev";
-            this.toolStripMenuItem24.Click += new System.EventHandler(this.toolStripMenuItem24_Click);
             // 
             // Form1
             // 
@@ -570,7 +562,6 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem22;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem23;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem24;
     }
 }
 

@@ -569,6 +569,11 @@ namespace fotoshop
 
         private void toolStripMenuItem24_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void colorMapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             MapaBarev mb = new MapaBarev();
             mb.Show();
         }
