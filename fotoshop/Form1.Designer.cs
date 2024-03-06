@@ -60,6 +60,7 @@
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem23 = new System.Windows.Forms.ToolStripMenuItem();
             this.výběrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.paletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -221,7 +222,8 @@
             this.toolStripMenuItem10,
             this.toolStripMenuItem12,
             this.toolStripMenuItem21,
-            this.toolStripMenuItem22});
+            this.toolStripMenuItem22,
+            this.toolStripMenuItem23});
             this.upravyToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.upravyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.upravyToolStripMenuItem.Name = "upravyToolStripMenuItem";
@@ -388,6 +390,15 @@
             this.toolStripMenuItem22.Text = "Výřez";
             this.toolStripMenuItem22.Click += new System.EventHandler(this.upravy_zvetsenina_Click);
             // 
+            // toolStripMenuItem23
+            // 
+            this.toolStripMenuItem23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStripMenuItem23.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem23.Name = "toolStripMenuItem23";
+            this.toolStripMenuItem23.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem23.Text = "Převod do Textu";
+            this.toolStripMenuItem23.Click += new System.EventHandler(this.convertToText_Click);
+            // 
             // výběrToolStripMenuItem
             // 
             this.výběrToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -439,6 +450,7 @@
             this.colorMapToolStripMenuItem.Name = "colorMapToolStripMenuItem";
             this.colorMapToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.colorMapToolStripMenuItem.Text = "ColorMap";
+            this.colorMapToolStripMenuItem.Click += new System.EventHandler(this.colorMapToolStripMenuItem_Click);
             // 
             // menuStrip2
             // 
@@ -549,6 +561,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem22;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem23;
     }
 }
 
