@@ -571,15 +571,10 @@ namespace fotoshop
             
         }
 
-        private void colorMapToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            colormatrix mb = new colormatrix(btm.bitmap);
-            mb.Show();
-        }
-
         private void paletaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colormatrix cm = new colormatrix(btm.bitmap);
+            MessageBox.Show("b");
             cm.ShowDialog();
         }
     }
