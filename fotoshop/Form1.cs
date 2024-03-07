@@ -560,5 +560,27 @@ namespace fotoshop
         {
             btm.drawBitmap(btmDrawPos, this);
         }
+        private void convertToText_Click(object sender, EventArgs e)
+        {
+            /*Text text = new Text(btm);
+            text.ShowDialog();*/
+        }
+
+        private void toolStripMenuItem24_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void colorMapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colormatrix mb = new colormatrix(btm.bitmap);
+            mb.Show();
+        }
+
+        private void paletaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colormatrix cm = new colormatrix(btm.bitmap);
+            cm.ShowDialog();
+        }
     }
 }

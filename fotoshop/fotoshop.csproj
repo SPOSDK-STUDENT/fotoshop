@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitovaMapa.cs" />
+    <Compile Include="colormatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="colormatrix.Designer.cs">
+      <DependentUpon>colormatrix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="vyrez.Designer.cs">
       <DependentUpon>vyrez.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="colormatrix.resx">
+      <DependentUpon>colormatrix.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
