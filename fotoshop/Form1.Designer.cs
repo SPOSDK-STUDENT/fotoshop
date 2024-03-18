@@ -238,7 +238,7 @@
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem1.Text = "Černobílí";
             // 
             // toolStripMenuItem2
@@ -440,6 +440,7 @@
             this.colorMapToolStripMenuItem.Name = "colorMapToolStripMenuItem";
             this.colorMapToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.colorMapToolStripMenuItem.Text = "ColorMap";
+            this.colorMapToolStripMenuItem.Click += new System.EventHandler(this.paletaToolStripMenuItem_Click);
             // 
             // menuStrip2
             // 
