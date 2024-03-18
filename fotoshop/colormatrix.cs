@@ -25,6 +25,40 @@ namespace fotoshop
    new float[] {0,  0,  1,  0, 0},        // blue scaling
    new float[] {0,  0,  0,  1, 0},        // alpha scaling
    new float[] {0, 0, 0, 0, 1}};
+        public float[][] filterMatrixDefault = {
+   new float[] {1,  0,  0,  0, 0},        // red scaling
+   new float[] {0,  1,  0,  0, 0},        // green scaling
+   new float[] {0,  0,  1,  0, 0},        // blue scaling
+   new float[] {0,  0,  0,  1, 0},        // alpha scaling
+   new float[] {0, 0, 0, 0, 1}};
+
+        public float[][] filterMatrixGrayscale = {
+   new float[] {.3f,  .3f,  .3f,  0, 0},        // red scaling
+   new float[] {.59f, .59f, .59f,  0, 0},        // green scaling
+   new float[] { .11f, .11f,  .11f,  0, 0},        // blue scaling
+   new float[] {0,  0,  0,  1, 0},        // alpha scaling
+   new float[] {0, 0, 0, 0, 1}};
+        public float[][] filterMatrixSepiatone = {
+   new float[] {.393f,  .349f,  .272f,  0, 0},        // red scaling
+   new float[] {.769f,  .686f,  .534f,  0, 0},        // green scaling
+   new float[] {.189f,  .168f,  .131f,  0, 0},        // blue scaling
+   new float[] {0,  0,  0,  1, 0},        // alpha scaling
+   new float[] {0, 0, 0, 0, 1}};
+        public float[][] filterMatrixNegative = {
+   new float[] {-1,  0,  0,  0, 0},        // red scaling
+   new float[] {0,  -1,  0,  0, 0},        // green scaling
+   new float[] {0,  0,  -1,  0, 0},        // blue scaling
+   new float[] {0,  0,  0,  1, 0},        // alpha scaling
+   new float[] {0, 0, 0, 0, 1}};
+        public float[][] filterMatrixPolaroid =
+        {
+            new float[] { 1.438f, -0.062f, -0.062f, 0, 0 },
+                new float[] { -0.122f, 1.378f, -0.122f, 0, 0 },
+                new float[] { -0.016f, -0.016f, 1.483f, 0, 0 },
+                new float[] { 0, 0, 0, 1, 0 },
+                new float[] { -0.03f, 0.05f, -0.02f, 0, 1 }
+        };
+
 
         Bitmap image;
         void main()
@@ -190,6 +224,35 @@ namespace fotoshop
             colorMatrixElements[4][2] = (float)trackBar18.Value / 100;
             label18.Text = trackBar18.Value + "%";
             main();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            colorMatrixElements = filterMatrixGrayscale; main();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            colorMatrixElements = filterMatrixSepiatone; main();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            colorMatrixElements = filterMatrixNegative; main();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            colorMatrixElements = filterMatrixPolaroid;
+            main();
+        }
+        //nedodělaný (reset)
+        //https://stackoverflow.com/questions/36200888/looping-through-labels-in-c-sharp
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            colorMatrixElements = filterMatrixDefault; main();
+            var trackBars = this.Controls.OfType<TrackBar>().ToList();
+            trackBar1.Value = 1; trackBar6.Value = 1; trackBar9.Value = 1; trackBar12.Value = 1;
         }
     }
 }
