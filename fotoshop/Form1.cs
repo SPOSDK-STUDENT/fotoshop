@@ -583,5 +583,11 @@ namespace fotoshop
             btm.size = new Size(btm.size.Width*2, btm.size.Height*2);
             btm.drawBitmap(btmDrawPos, this);
         }
+
+        private void toolStripMenuItem27_Click(object sender, EventArgs e)
+        {
+            Puzzle pz = new Puzzle(btm, 4);
+            pz.Show();
+        }
     }
 }

@@ -86,3 +86,4 @@ C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.colormatr
 C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.colormatrix.resources
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.Text.resources
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.MapaBarev.resources
+C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.Puzzle.resources

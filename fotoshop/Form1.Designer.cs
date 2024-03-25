@@ -60,10 +60,16 @@
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem23 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem24 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem25 = new System.Windows.Forms.ToolStripMenuItem();
             this.výběrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.paletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem26 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem27 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem28 = new System.Windows.Forms.ToolStripMenuItem();
             this.pokusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -72,9 +78,6 @@
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem23 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem24 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem25 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -244,7 +247,7 @@
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem1.Text = "Černobílí";
             // 
             // toolStripMenuItem2
@@ -283,7 +286,7 @@
             this.toolStripMenuItem8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem8.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem8.Text = "Odstíny Barvy";
             // 
             // toolStripMenuItem7
@@ -316,7 +319,7 @@
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem10.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem10.Text = "Reliéf";
             // 
             // toolStripMenuItem11
@@ -370,7 +373,7 @@
             this.toolStripMenuItem12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem12.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem12.Text = "Obrysy";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
@@ -380,7 +383,7 @@
             this.toolStripMenuItem21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem21.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem21.Name = "toolStripMenuItem21";
-            this.toolStripMenuItem21.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem21.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem21.Text = "Třídění";
             this.toolStripMenuItem21.Click += new System.EventHandler(this.upravy_trideni_Click);
             // 
@@ -390,9 +393,30 @@
             this.toolStripMenuItem22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem22.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem22.Name = "toolStripMenuItem22";
-            this.toolStripMenuItem22.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem22.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem22.Text = "Výřez";
             this.toolStripMenuItem22.Click += new System.EventHandler(this.upravy_zvetsenina_Click);
+            // 
+            // toolStripMenuItem23
+            // 
+            this.toolStripMenuItem23.Name = "toolStripMenuItem23";
+            this.toolStripMenuItem23.Size = new System.Drawing.Size(179, 22);
+            this.toolStripMenuItem23.Text = "Převod do textu";
+            this.toolStripMenuItem23.Click += new System.EventHandler(this.toolStripMenuItem23_Click);
+            // 
+            // toolStripMenuItem24
+            // 
+            this.toolStripMenuItem24.Name = "toolStripMenuItem24";
+            this.toolStripMenuItem24.Size = new System.Drawing.Size(179, 22);
+            this.toolStripMenuItem24.Text = "Mapa Barev";
+            this.toolStripMenuItem24.Click += new System.EventHandler(this.toolStripMenuItem24_Click);
+            // 
+            // toolStripMenuItem25
+            // 
+            this.toolStripMenuItem25.Name = "toolStripMenuItem25";
+            this.toolStripMenuItem25.Size = new System.Drawing.Size(179, 22);
+            this.toolStripMenuItem25.Text = "Zvětšit na 2x";
+            this.toolStripMenuItem25.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // výběrToolStripMenuItem
             // 
@@ -410,7 +434,7 @@
             this.toolStripMenuItem18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripMenuItem18.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(123, 22);
             this.toolStripMenuItem18.Text = "Kapátko";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.vyber_kapatko_Click);
             // 
@@ -425,11 +449,35 @@
             // 
             // hraToolStripMenuItem
             // 
+            this.hraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem26});
             this.hraToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.hraToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.hraToolStripMenuItem.Name = "hraToolStripMenuItem";
             this.hraToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.hraToolStripMenuItem.Text = "Hra";
+            // 
+            // toolStripMenuItem26
+            // 
+            this.toolStripMenuItem26.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem27,
+            this.toolStripMenuItem28});
+            this.toolStripMenuItem26.Name = "toolStripMenuItem26";
+            this.toolStripMenuItem26.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem26.Text = "Puzzle";
+            // 
+            // toolStripMenuItem27
+            // 
+            this.toolStripMenuItem27.Name = "toolStripMenuItem27";
+            this.toolStripMenuItem27.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem27.Text = "4x4";
+            this.toolStripMenuItem27.Click += new System.EventHandler(this.toolStripMenuItem27_Click);
+            // 
+            // toolStripMenuItem28
+            // 
+            this.toolStripMenuItem28.Name = "toolStripMenuItem28";
+            this.toolStripMenuItem28.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem28.Text = "8x8";
             // 
             // pokusToolStripMenuItem
             // 
@@ -488,27 +536,6 @@
             this.toolStripMenuItem5.Size = new System.Drawing.Size(33, 19);
             this.toolStripMenuItem5.Text = "dbg";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.dbg_Click);
-            // 
-            // toolStripMenuItem23
-            // 
-            this.toolStripMenuItem23.Name = "toolStripMenuItem23";
-            this.toolStripMenuItem23.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem23.Text = "Převod do textu";
-            this.toolStripMenuItem23.Click += new System.EventHandler(this.toolStripMenuItem23_Click);
-            // 
-            // toolStripMenuItem24
-            // 
-            this.toolStripMenuItem24.Name = "toolStripMenuItem24";
-            this.toolStripMenuItem24.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem24.Text = "Mapa Barev";
-            this.toolStripMenuItem24.Click += new System.EventHandler(this.toolStripMenuItem24_Click);
-            // 
-            // toolStripMenuItem25
-            // 
-            this.toolStripMenuItem25.Name = "toolStripMenuItem25";
-            this.toolStripMenuItem25.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem25.Text = "Zvětšit na 2x";
-            this.toolStripMenuItem25.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // Form1
             // 
@@ -581,6 +608,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem23;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem24;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem25;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem26;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem27;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem28;
     }
 }
 
