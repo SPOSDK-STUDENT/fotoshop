@@ -64,10 +64,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.trackBar17 = new System.Windows.Forms.TrackBar();
-            this.trackBar18 = new System.Windows.Forms.TrackBar();
-            this.trackBar19 = new System.Windows.Forms.TrackBar();
-            this.trackBar20 = new System.Windows.Forms.TrackBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,10 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar20)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,7 +254,8 @@
             // 
             this.trackBar14.BackColor = System.Drawing.Color.Blue;
             this.trackBar14.Location = new System.Drawing.Point(114, 427);
-            this.trackBar14.Maximum = 200;
+            this.trackBar14.Maximum = 100;
+            this.trackBar14.Minimum = -100;
             this.trackBar14.Name = "trackBar14";
             this.trackBar14.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar14.Size = new System.Drawing.Size(45, 106);
@@ -274,7 +267,8 @@
             // 
             this.trackBar15.BackColor = System.Drawing.Color.Lime;
             this.trackBar15.Location = new System.Drawing.Point(63, 427);
-            this.trackBar15.Maximum = 200;
+            this.trackBar15.Maximum = 100;
+            this.trackBar15.Minimum = -100;
             this.trackBar15.Name = "trackBar15";
             this.trackBar15.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar15.Size = new System.Drawing.Size(45, 106);
@@ -286,7 +280,8 @@
             // 
             this.trackBar16.BackColor = System.Drawing.Color.Red;
             this.trackBar16.Location = new System.Drawing.Point(12, 427);
-            this.trackBar16.Maximum = 200;
+            this.trackBar16.Maximum = 100;
+            this.trackBar16.Minimum = -100;
             this.trackBar16.Name = "trackBar16";
             this.trackBar16.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar16.Size = new System.Drawing.Size(45, 106);
@@ -494,53 +489,6 @@
             this.label20.Size = new System.Drawing.Size(0, 15);
             this.label20.TabIndex = 57;
             // 
-            // trackBar17
-            // 
-            this.trackBar17.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.trackBar17.Location = new System.Drawing.Point(165, 552);
-            this.trackBar17.Maximum = 200;
-            this.trackBar17.Name = "trackBar17";
-            this.trackBar17.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar17.Size = new System.Drawing.Size(45, 106);
-            this.trackBar17.TabIndex = 56;
-            this.trackBar17.TickFrequency = 20;
-            // 
-            // trackBar18
-            // 
-            this.trackBar18.BackColor = System.Drawing.Color.Blue;
-            this.trackBar18.Location = new System.Drawing.Point(114, 552);
-            this.trackBar18.Maximum = 200;
-            this.trackBar18.Name = "trackBar18";
-            this.trackBar18.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar18.Size = new System.Drawing.Size(45, 106);
-            this.trackBar18.TabIndex = 55;
-            this.trackBar18.TickFrequency = 20;
-            this.trackBar18.Scroll += new System.EventHandler(this.trackBar18_Scroll);
-            // 
-            // trackBar19
-            // 
-            this.trackBar19.BackColor = System.Drawing.Color.Lime;
-            this.trackBar19.Location = new System.Drawing.Point(63, 552);
-            this.trackBar19.Maximum = 200;
-            this.trackBar19.Name = "trackBar19";
-            this.trackBar19.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar19.Size = new System.Drawing.Size(45, 106);
-            this.trackBar19.TabIndex = 54;
-            this.trackBar19.TickFrequency = 20;
-            this.trackBar19.Scroll += new System.EventHandler(this.trackBar19_Scroll);
-            // 
-            // trackBar20
-            // 
-            this.trackBar20.BackColor = System.Drawing.Color.Red;
-            this.trackBar20.Location = new System.Drawing.Point(12, 552);
-            this.trackBar20.Maximum = 200;
-            this.trackBar20.Name = "trackBar20";
-            this.trackBar20.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar20.Size = new System.Drawing.Size(45, 106);
-            this.trackBar20.TabIndex = 53;
-            this.trackBar20.TickFrequency = 20;
-            this.trackBar20.Scroll += new System.EventHandler(this.trackBar20_Scroll);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -566,28 +514,28 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
             this.toolStripMenuItem2.Text = "Grayscale";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(130, 22);
             this.toolStripMenuItem3.Text = "Sepia Tone";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(130, 22);
             this.toolStripMenuItem4.Text = "Negative";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(130, 22);
             this.toolStripMenuItem5.Text = "Polaroid";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
@@ -608,10 +556,6 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.trackBar17);
-            this.Controls.Add(this.trackBar18);
-            this.Controls.Add(this.trackBar19);
-            this.Controls.Add(this.trackBar20);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -665,10 +609,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar20)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -714,10 +654,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TrackBar trackBar17;
-        private System.Windows.Forms.TrackBar trackBar18;
-        private System.Windows.Forms.TrackBar trackBar19;
-        private System.Windows.Forms.TrackBar trackBar20;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;

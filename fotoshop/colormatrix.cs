@@ -202,26 +202,6 @@ namespace fotoshop
             main();
         }
 
-        private void trackBar20_Scroll(object sender, EventArgs e)
-        {
-            colorMatrixElements[4][0] = (float)trackBar20.Value / 100;
-            label20.Text = trackBar20.Value + "%";
-            main();
-        }
-
-        private void trackBar19_Scroll(object sender, EventArgs e)
-        {
-            colorMatrixElements[4][1] = (float)trackBar19.Value / 100;
-            label19.Text = trackBar19.Value + "%";
-            main();
-        }
-
-        private void trackBar18_Scroll(object sender, EventArgs e)
-        {
-            colorMatrixElements[4][2] = (float)trackBar18.Value / 100;
-            label18.Text = trackBar18.Value + "%";
-            main();
-        }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
