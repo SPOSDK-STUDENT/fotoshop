@@ -565,5 +565,23 @@ namespace fotoshop
             colormatrix cm = new colormatrix(btm.bitmap);
             cm.Show();
         }
+
+        private void toolStripMenuItem23_Click(object sender, EventArgs e)
+        {
+            Text aaa = new Text(btm);
+            aaa.Show();
+        }
+
+        private void toolStripMenuItem24_Click(object sender, EventArgs e)
+        {
+            MapaBarev cm = new MapaBarev();
+            cm.Show();
+        }
+
+        private void toolStripMenuItem25_Click(object sender, EventArgs e)
+        {
+            btm.size = new Size(btm.size.Width*2, btm.size.Height*2);
+            btm.drawBitmap(btmDrawPos, this);
+        }
     }
 }

@@ -31,7 +31,6 @@ namespace fotoshop
    new float[] {0,  0,  1,  0, 0},        // blue scaling
    new float[] {0,  0,  0,  1, 0},        // alpha scaling
    new float[] {0, 0, 0, 0, 1}};
-
         public float[][] filterMatrixGrayscale = {
    new float[] {.3f,  .3f,  .3f,  0, 0},        // red scaling
    new float[] {.59f, .59f, .59f,  0, 0},        // green scaling
@@ -58,8 +57,6 @@ namespace fotoshop
                 new float[] { 0, 0, 0, 1, 0 },
                 new float[] { -0.03f, 0.05f, -0.02f, 0, 1 }
         };
-
-
         Bitmap image;
         void main()
         {
@@ -252,7 +249,7 @@ namespace fotoshop
         {
             colorMatrixElements = filterMatrixDefault; main();
             var trackBars = this.Controls.OfType<TrackBar>().ToList();
-            trackBar1.Value = 1; trackBar6.Value = 1; trackBar9.Value = 1; trackBar12.Value = 1;
+            trackBar1.Value = 100; trackBar6.Value = 100; trackBar9.Value = 100; trackBar12.Value = 100;
         }
     }
 }

@@ -84,3 +84,5 @@ C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.vyrez.reso
 C:\Users\rohacekd\Desktop\fotosop\fotoshop\obj\Debug\fotoshop.colormatrix.resources
 C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.colormatrix.resources
 C:\Users\pozlerl\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.colormatrix.resources
+C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.Text.resources
+C:\Users\rohacekd\Documents\GitHub\fotosop\fotoshop\obj\Debug\fotoshop.MapaBarev.resources
