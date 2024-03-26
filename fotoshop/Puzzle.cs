@@ -20,9 +20,10 @@ namespace fotoshop
         }
         BitovaMapa btm;
         int size;
+        public Panel[,] panelArray = null;
         private void Puzzle_Load(object sender, EventArgs e)
         {
-            Panel[,] panelArray = new Panel[size, size];
+            panelArray = new Panel[size, size];
             Size btmSize = new Size(btm.bitmap.Width / size, btm.bitmap.Height / size);
             for (int i = 0; i < size; i++)
             {
@@ -31,19 +32,21 @@ namespace fotoshop
                     panelArray[i, j] = new Panel(); panelArray[i, j].Location = new Point(i * btmSize.Width, j * btmSize.Height);
                     panelArray[i, j].Size = btmSize;
                     panelArray[i, j].BackgroundImage = btm.bitmap.Clone(new Rectangle(new Point(i * btmSize.Width, j * btmSize.Height), btmSize), btm.bitmap.PixelFormat);
+                    panelArray[i, j].MouseDown += this.panel1_MouseDown;
                     this.Controls.Add(panelArray[i, j]);
                 }
             }
             panelArray = Shuffle(panelArray);
         }
+
         Panel[,] Shuffle(Panel[,] panelArray)
         {
-            panelArray = Switch(panelArray, new Point(0, 0), new Point(2, 2));
+            //panelArray = Switch(panelArray, new Point(0, 0), new Point(2, 2));
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    
+                    panelArray = Switch(panelArray, new Point(i, j), new Point(random.Next(0, size), random.Next(0, size)));
                 }
             }
             return panelArray;
@@ -58,5 +61,31 @@ namespace fotoshop
             return panelArray;
         }
         Random random = new Random();
+        Point panelSelected = new Point(-1,-1);
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+            for (int i = 0; i < size; i++)
+            {
+                if (Array.IndexOf(GetColumn(panelArray, i), (Panel)sender) != -1)
+                {
+                    if (panelSelected == new Point(-1, -1))
+                    {
+                        panelSelected = new Point(Array.IndexOf(GetColumn(panelArray, i), (Panel)sender), i);
+                    }
+                    else
+                    {
+                        panelArray = Switch(panelArray, panelSelected, new Point(Array.IndexOf(GetColumn(panelArray, i), (Panel)sender), i));
+                        panelSelected = new Point(-1, -1);
+                    }
+                }
+            }
+        }
+        public Panel[] GetColumn(Panel[,] matrix, int columnNumber)
+        {
+            return Enumerable.Range(0, matrix.GetLength(0))
+                    .Select(x => matrix[x, columnNumber])
+                    .ToArray();
+        }
     }
 }
