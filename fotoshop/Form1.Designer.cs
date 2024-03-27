@@ -478,6 +478,7 @@
             this.toolStripMenuItem28.Name = "toolStripMenuItem28";
             this.toolStripMenuItem28.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem28.Text = "8x8";
+            this.toolStripMenuItem28.Click += new System.EventHandler(this.toolStripMenuItem28_Click);
             // 
             // pokusToolStripMenuItem
             // 
