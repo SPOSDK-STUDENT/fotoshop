@@ -558,6 +558,7 @@
             this.toolStripMenuItem30.Name = "toolStripMenuItem30";
             this.toolStripMenuItem30.Size = new System.Drawing.Size(319, 22);
             this.toolStripMenuItem30.Text = "2x2";
+            this.toolStripMenuItem30.Click += new System.EventHandler(this.toolStripMenuItem30_Click);
             // 
             // toolStripMenuItem31
             // 
