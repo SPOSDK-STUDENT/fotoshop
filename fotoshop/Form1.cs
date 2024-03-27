@@ -595,5 +595,23 @@ namespace fotoshop
             Puzzle pz = new Puzzle(btm, 8);
             pz.Show();
         }
+
+        private void toolStripMenuItem31_Click(object sender, EventArgs e)
+        {
+            Puzzle pz = new Puzzle(btm, 98);
+            pz.Show();
+        }
+
+        private void toolStripMenuItem32_Click(object sender, EventArgs e)
+        {
+            Puzzle pz = new Puzzle(btm, 20);
+            pz.Show();
+        }
+
+        private void toolStripMenuItem29_Click(object sender, EventArgs e)
+        {
+            Puzzle pz = new Puzzle(btm, 12);
+            pz.Show();
+        }
     }
 }
